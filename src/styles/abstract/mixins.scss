@@ -1,0 +1,72 @@
+// списки, ссылки, кнопки, иконки
+@mixin list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin link($color: $main-black-1) {
+  text-decoration: none;
+  color: $color;
+}
+
+@mixin button {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@mixin disabled {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+// для заголовков страниц
+@mixin section-title($color: $main-black-1) {
+  margin: 0;
+  color: $color;
+  font-size: 3.2rem;
+  font-weight: $fw-semibold;
+  line-height: 1.25;
+}
+
+// для текста
+@mixin text(
+  $color: $main-black-1,
+  $font-size: 1.6rem,
+  $font-weight: $fw-regular,
+  $line-height: normal
+) {
+  margin: 0;
+  color: $color;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+// это оставлю тут временно, если ховеры будут одинаковыми по проекту,
+// то можно будет эти миксины отредактировать и использовать
+@mixin link-hover {
+  @extend %transition-all;
+
+  &:hover {
+    filter: drop-shadow(2px 3px 6px rgba(0, 0, 0, 0.22));
+    transform: scale(1.01);
+  }
+}
+
+@mixin button-hover {
+  @extend %transition-all;
+
+  &:hover {
+    filter: drop-shadow(2px 3px 6px rgba(0, 0, 0, 0.22));
+    opacity: 0.9;
+  }
+}
