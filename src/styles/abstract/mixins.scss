@@ -1,3 +1,5 @@
+@import './constants.scss';
+
 // списки, ссылки, кнопки, иконки
 @mixin list {
   margin: 0;
@@ -38,12 +40,10 @@
 }
 
 // для текста
-@mixin text(
-  $color: $main-black-1,
+@mixin text($color: $main-black-1,
   $font-size: 16px,
   $font-weight: $fw-regular,
-  $line-height: normal
-) {
+  $line-height: normal) {
   margin: 0;
   color: $color;
   font-size: $font-size;

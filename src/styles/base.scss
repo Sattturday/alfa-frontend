@@ -7,12 +7,28 @@ html {
   scroll-behavior: smooth;
 }
 
+.page {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+
+  &_lock {
+    overflow: hidden;
+    padding-right: 17px;
+  }
+}
+
 #root {
   display: flex;
   position: relative;
   flex-direction: column;
+  align-items: center;
   min-height: 100vh;
-  margin: 0 auto;
+  max-width: $root-width;
+  width: 100%;
+  margin: 0;
+  padding-top: 33px;
   @extend %font-prim;
   font-style: normal;
   color: $main-black-1;
@@ -26,16 +42,12 @@ html {
   background-color: $main-white-1;
 }
 
-.page {
-  margin: 0;
+.wrapper {
   width: 100%;
-  padding: 0 120px;
   max-width: $content-width;
-
-  &_lock {
-    overflow: hidden;
-    padding-right: 17px;
-  }
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .background {
