@@ -1,0 +1,9 @@
+@import "../../styles/abstract/mixins.scss";
+
+.comment__button {
+  @include button;
+  width: 20px;
+  height: 20px;
+  background-image: url(../../images/icon_comment_empty.svg);
+  background-repeat: no-repeat;
+}

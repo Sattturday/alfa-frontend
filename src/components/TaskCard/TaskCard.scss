@@ -1,0 +1,55 @@
+@import "../../styles/abstract/mixins.scss";
+@import "../../styles/abstract/constants.scss";
+
+.task-card {
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  width: 282px;
+  height: 192px;
+  border: 1px solid $main-white-secondary-3;
+  border-radius: 16px;
+}
+
+.task-card__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 242px;
+  /* height: 60px; */
+    h3 {
+      @include text;
+      font-weight: $fw-bold;
+      font-size: 20px;
+      line-height: 24px;
+      max-width: 222px;
+      /* text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden; */
+    }
+}
+
+.task__card__title {
+
+}
+
+.task-card__descript {
+  @include text($color: $main-black-secondary-2);
+  margin-top: 8px;
+}
+
+.task-card__status-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.task-card__status-select {
+  @include button;
+  width: 150px;
+  height: 28px;
+  border: 1px solid $main-red-1;
+  border-radius: 32px;
+  padding: 4px 8px;
+  gap: 4px;
+}
