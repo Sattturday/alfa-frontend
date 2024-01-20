@@ -2,14 +2,14 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header/Header";
-import Test from "./components/Test/Test";
+import Employee from "./pages/Employee/Employee";
 
 function App() {
   return (
     <div className="wrapper">
       <Header />
       <Routes>
-        <Route path="/" element={<Test />} />
+        <Route path="/" element={<Employee />} />
       </Routes>
     </div>
   );

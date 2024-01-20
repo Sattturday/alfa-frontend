@@ -35,7 +35,15 @@
   margin: 0;
   color: $color;
   font-size: 32px;
-  font-weight: $fw-semibold;
+  font-weight: $fw-bold;//700
+  line-height: 1.25;
+}
+
+@mixin section-title2($color: $main-black-1) {
+  margin: 0;
+  color: $color;
+  font-size: 32px;
+  font-weight: $fw-semibold;//600
   line-height: 1.25;
 }
 
@@ -46,18 +54,19 @@
   $line-height: normal) {
   margin: 0;
   color: $color;
-  font-size: $font-size;
+  font-size: $font-size;//400
   font-weight: $font-weight;
   line-height: $line-height;
 }
 
+//отличается от text жирность 500, line-height 20px
 @mixin text1($color: $main-black-1,
   $font-size: 16px,
   $font-weight: $fw-medium,
   $line-height: 20px) {
   margin: 0;
   color: $color;
-  font-size: $font-size;
+  font-size: $font-size;//500
   font-weight: $font-weight;
   line-height: $line-height;
 }

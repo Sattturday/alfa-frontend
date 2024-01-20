@@ -29,6 +29,7 @@ html {
   width: 100%;
   margin: 0;
   padding-top: 33px;
+  padding-bottom: 40px; //возможно нижний падинг будет не нужен.
   @extend %font-prim;
   font-style: normal;
   color: $main-black-1;

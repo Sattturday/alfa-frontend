@@ -2,9 +2,11 @@
 @import '../../styles/abstract/placeholders.scss';
 
 .link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  width: fit-content;
   padding: 32px 0;
+  margin-left: 3px;
   gap: 8px;
   @include link;
   @extend %transition-all;
