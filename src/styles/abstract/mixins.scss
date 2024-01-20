@@ -51,6 +51,17 @@
   line-height: $line-height;
 }
 
+@mixin text1($color: $main-black-1,
+  $font-size: 16px,
+  $font-weight: $fw-medium,
+  $line-height: 20px) {
+  margin: 0;
+  color: $color;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
 // это оставлю тут временно, если ховеры будут одинаковыми по проекту,
 // то можно будет эти миксины отредактировать и использовать
 @mixin link-hover {

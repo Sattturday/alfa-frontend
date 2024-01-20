@@ -13,6 +13,10 @@
     @include link;
     @include link-hover; //пока использовал временный миксин. Нужно уточнить ховер
 
+    &:focus {
+      border: 6px solid red;
+      outline: navy;
+    }
     img {
       border-radius: 50%;
       width: 43px;
