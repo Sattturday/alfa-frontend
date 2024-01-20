@@ -30,6 +30,11 @@
   user-select: none;
 }
 
+//для рамок!
+@mixin border($color: $main-white-secondary-3){
+border: 1px solid $color;
+}
+
 // для заголовков страниц
 @mixin section-title($color: $main-black-1) {
   margin: 0;
@@ -61,6 +66,17 @@
 
 //отличается от text жирность 500, line-height 20px
 @mixin text1($color: $main-black-1,
+  $font-size: 16px,
+  $font-weight: $fw-medium,
+  $line-height: 20px) {
+  margin: 0;
+  color: $color;
+  font-size: $font-size;//500
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+//такой же текст, только серый, чаще всего использует для subtitle
+@mixin text1-gray($color: $main-black-secondary-2,
   $font-size: 16px,
   $font-weight: $fw-medium,
   $line-height: 20px) {

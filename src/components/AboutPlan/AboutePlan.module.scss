@@ -1,0 +1,49 @@
+@import '../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/constants.scss';
+
+.root {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  border-radius: 30px;
+  @include border;
+
+  .infoColumn {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+
+    h2 {
+      @include section-title;
+    }
+
+    .subtitle {
+      padding-top: 4px;
+      @include text1-gray;
+    }
+
+    .description {
+      max-width: 760px;
+      padding-top: 16px;
+      @include text;
+    }
+
+    .data {
+      padding-top: 16px;
+      @include text1
+    }
+  }
+
+  .progressBar {
+    box-sizing: border-box;
+    width: 128px;
+    height: 128px;
+
+    div {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 24px;
+      color: $main-black-1;
+    }
+  }
+}
