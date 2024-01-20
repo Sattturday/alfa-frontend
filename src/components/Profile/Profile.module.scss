@@ -1,0 +1,30 @@
+@import '../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/placeholders.scss';
+
+.profile {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding-bottom: 32px;
+  gap: 24px;
+
+  img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    h1 {
+      @include section-title;
+    }
+
+    p {
+      @include text1($color: $main-black-secondary-2);
+    }
+  }
+}
