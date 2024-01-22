@@ -1,0 +1,9 @@
+@import '../../styles/abstract/mixins.scss';
+
+.list {
+  @include list;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}

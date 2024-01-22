@@ -1,0 +1,14 @@
+@import '../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/placeholders.scss';
+
+.login {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login__link {
+  @include link;
+  @include text1($color: $main-black-secondary-2);
+}
