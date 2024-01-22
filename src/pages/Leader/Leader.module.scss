@@ -1,0 +1,10 @@
+@import '../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/placeholders.scss';
+
+.leader {
+}
+
+.leader__title {
+  @include section-title($font-weight: $fw-semibold);
+  padding-bottom: 32px;
+}
