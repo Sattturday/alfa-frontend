@@ -1,9 +1,9 @@
 import React from "react";
-import { CircularProgressBar } from "@alfalab/core-components-circular-progress-bar";
+import ProgressBar from "../ProgressBar/ProgressBar";
 
 import styles from "./AboutePlan.module.scss";
 
-function AboutPlan({ value = 65 }) {
+function AboutPlan() {
   return (
     <section className={styles.root}>
       <div className={styles.infoColumn}>
@@ -17,12 +17,13 @@ function AboutPlan({ value = 65 }) {
         </p>
         <p className={styles.data}>До 12.04.2024</p>
       </div>
-      <CircularProgressBar
-        className={styles.progressBar}
-        value={value}
-        /* height={139} */
-        size="xl"
-        title={`${value}%`}
+      <ProgressBar
+        isSmall={false}
+        value={65}
+        isVarified={false}
+        isDeadline={false}
+        isCancel={false}
+        isNewCard={false}
       />
     </section>
   );
