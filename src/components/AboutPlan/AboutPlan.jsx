@@ -1,7 +1,7 @@
-import React from "react";
-import ProgressBar from "../ProgressBar/ProgressBar";
+import React from 'react';
+import ProgressBar from '../ProgressBar/ProgressBar';
 
-import styles from "./AboutePlan.module.scss";
+import styles from './AboutePlan.module.scss';
 
 function AboutPlan() {
   return (
@@ -20,7 +20,7 @@ function AboutPlan() {
       <ProgressBar
         isSmall={false}
         value={65}
-        isVarified={false}
+        isVerified={false}
         isDeadline={false}
         isCancel={false}
         isNewCard={false}
