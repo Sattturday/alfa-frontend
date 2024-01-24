@@ -1,7 +1,10 @@
+@import '../../styles/abstract/constants.scss';
+
 .dropmenu {
   width: 40px;
   aspect-ratio: 1 / 1;
   justify-self: end;
+  background-color: $main-white-1;
   background-image: url(../../assets/img/menu.svg);
   background-position: center;
   background-repeat: no-repeat;
