@@ -1,70 +1,128 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import styles from "./SelectStatus.module.scss";
 import "../../styles/abstract/constants.scss";
-import yellowColor from "../../assets/img/select-arrow-yellow.svg";
-import redColor from "../../assets/img/select-arrow-red.svg";
-import greenColor from "../../assets/img/select-arrow-green.svg";
+import yellowColorArrow from "../../assets/img/select-arrow-yellow.svg";
+import redColorArrow from "../../assets/img/select-arrow-red.svg";
+import greenColorArrow from "../../assets/img/select-arrow-green.svg";
 
-function SelectStatus({date}) {
-    const [status, setStatus] = useState('');
-    const [inputValue, setInputValue] = useState('');
-  
-    const handleSelectList = () => {
-      const selectList = document.querySelector(`.${styles.dropdown__list}`);
-      selectList.classList.toggle(styles.dropdown__list_visible);
+function SelectStatus({ task }) {
+  const [value, setValue] = useState("");
+  const [inputValue, setInputValue] = useState("");
+  const [isOpenList, setIsOpenList] = useState(false);
+  const [buttonStyle, setButtonStyle] = useState({});
+
+  const rebButton = {
+    border: "1px solid #ef3124",
+    backgroundImage: `url(${redColorArrow})`,
+    color: "#ef3124",
+  };
+
+  const greenButton = {
+    border: "1px solid #0cc44d",
+    backgroundImage: `url(${greenColorArrow})`,
+    color: "#0cc44d",
+  };
+
+  const yellowButton = {
+    border: "1px solid #fa9313",
+    backgroundImage: `url(${yellowColorArrow})`,
+    color: "#fa9313",
+  };
+
+  const showList = () => {
+    setIsOpenList(true);
+  };
+
+  const hideList = () => {
+    setIsOpenList(false);
+  };
+
+  const changeButton = (e) => {
+    if (e.currentTarget.id === "done") {
+      setInputValue(e.currentTarget.id);
+      setButtonStyle(greenButton);
+      setValue("Выполнено");
     }
-  
-    useEffect(() => {
-      const itemArray = document.querySelectorAll('.dropdown__list-item');
-      const dropdownButton = document.querySelector(`.${styles.dropdown__button}`);
-      itemArray.forEach(item => {
-        item.addEventListener('click', (e) => {
-          if(e.target === e.currentTarget) {
-            if(item.id === '1') {
-              dropdownButton.setAttribute('style', 'color: #ef3124; border: 1px solid #ef3124;')
-              dropdownButton.style.backgroundImage = `url(${redColor})`;
-            }
-            if(item.id === '2') {
-              dropdownButton.setAttribute('style', 'color: #fa9313; border: 1px solid #fa9313;');
-              dropdownButton.style.backgroundImage = `url(${yellowColor})`;
-            }
-            if(item.id === '3') {
-              dropdownButton.setAttribute('style', 'color: #0cc44d; border: 1px solid #0cc44d;')
-              dropdownButton.style.backgroundImage = `url(${greenColor})`
-            }
-            setStatus(item.textContent)
-            setInputValue(item.id)
-          }
-        })
-      })
-      handleSelectList()
-    },[])
-  
-    useEffect(() => {
-      document.addEventListener('click', (e) => {
-        const dropdownButton = document.querySelector(`.${styles.dropdown__button}`)
-      if(e.target !== dropdownButton) {
-        const selectList = document.querySelector(`.${styles.dropdown__list}`)
-        selectList.classList.remove(styles.dropdown__list_visible);
-    } })
-    }, [])
+    if (e.currentTarget.id === "inWork") {
+      setInputValue(e.currentTarget.id);
+      setButtonStyle(yellowButton);
+      setValue("В работе");
+    }
+    if (e.currentTarget.id === "noCompleted") {
+      setInputValue(e.currentTarget.id);
+      setButtonStyle(rebButton);
+      setValue("Не выполнено");
+    }
+    hideList();
+  };
 
-    return (
-        <div className={styles.card__block}>
-        <p>{`До ${date}`}</p>
-        <div className={styles.dropdown}>
-        <button name="status" id="status-select" className={`${styles.dropdown__button} ${styles.arrow}`} onClick={handleSelectList}>
-          {status ||'Не выполнено'}
+  useEffect(() => {
+    if (task.status === "done") {
+      setButtonStyle(greenButton);
+      setValue("Выполнено");
+    } else if (task.status === "inWork") {
+      setButtonStyle(yellowButton);
+      setValue("В работе");
+    } else if (task.status === "noCompleted") {
+      setButtonStyle(rebButton);
+      setValue("Не выполнено");
+    }
+  }, []);
+
+  return (
+    <div className={styles.card__block}>
+      <p>{`До ${task.deadline}`}</p>
+      <div className={styles.dropdown} id="status">
+        <button
+          name="status"
+          className={`${styles.dropdown__button}`}
+          style={buttonStyle}
+          onClick={showList}
+        >
+          {value}
         </button>
-        <ul className={styles.dropdown__list}>
-          <li  className="dropdown__list-item" id="1">Не выполнено</li>
-          <li  className="dropdown__list-item" id="2">В работе</li>
-          <li  className="dropdown__list-item" id="3">Выполнено</li>
+        <ul
+          className={
+            isOpenList
+              ? `${styles.dropdown__list} ${styles.dropdown__list_visible}`
+              : `${styles.dropdown__list}`
+          }
+        >
+          <li
+            onClick={changeButton}
+            className="dropdown__list-item"
+            id="noCompleted"
+          >
+            Не выполнено
+          </li>
+          <li
+            onClick={changeButton}
+            className="dropdown__list-item"
+            id="inWork"
+          >
+            В работе
+          </li>
+          <li onClick={changeButton} className="dropdown__list-item" id="done">
+            Выполнено
+          </li>
         </ul>
+        <input
+          type="text"
+          name="select-input"
+          value={inputValue}
+          className={styles.dropdown__input}
+        ></input>
       </div>
-      <input type="text" name="select-input" value={inputValue} className={styles.dropdown__input}></input>
-      </div>
-    )
+      <div
+        onClick={hideList}
+        className={
+          isOpenList
+            ? `${styles.overlay} ${styles.overlay_active}`
+            : `${styles.overlay}`
+        }
+      ></div>
+    </div>
+  );
 }
 
-export default SelectStatus
+export default SelectStatus;

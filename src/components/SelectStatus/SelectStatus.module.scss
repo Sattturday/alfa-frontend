@@ -13,10 +13,9 @@
 
 .dropdown__button {
   @include button;
-  @include text1($color: $main-red-1);
+  @include text1;
   width: -moz-fit-content;
   width: fit-content;
-  border: 1px solid $main-red-1;
   border-radius: 32px;
   padding: 4px 32px 4px 8px;
   appearance: none;
@@ -30,7 +29,6 @@
 }
 .dropdown {
   position: relative;
-  align-self: self-end;
 }
 
 .dropdown__list {
@@ -44,7 +42,7 @@
   background-color: $main-white-secondary-2;
   width: 150px;
   border-radius: 8px;
-  z-index: 1;
+  z-index: 3;
 
   li {
     @include text1-date;
@@ -74,4 +72,24 @@
 
 .dropdown__input {
   display: none;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  background: black;
+  z-index: 1;
+}
+
+.overlay_active {
+  display: block;
+  visibility: visible;
+  opacity: 0;
 }
