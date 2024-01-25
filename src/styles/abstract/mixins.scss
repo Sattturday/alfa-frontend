@@ -64,6 +64,9 @@
   font-size: $font-size; //400
   font-weight: $font-weight;
   line-height: $line-height;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 //отличается от text жирность 500, line-height 20px
@@ -78,6 +81,9 @@
   font-size: $font-size; //500
   font-weight: $font-weight;
   line-height: $line-height;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 //такой же текст, только серый, чаще всего использует для subtitle
@@ -92,6 +98,24 @@
   font-size: $font-size; //500
   font-weight: $font-weight;
   line-height: $line-height;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+//текст для даты
+@mixin text1-date($color: $main-black-1,
+  $font-size: 12px,
+  $font-weight: $fw-medium,
+  $line-height: 16px) {
+  margin: 0;
+  color: $color;
+  font-size: $font-size;//500
+  font-weight: $font-weight;
+  line-height: $line-height;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 // это оставлю тут временно, если ховеры будут одинаковыми по проекту,
