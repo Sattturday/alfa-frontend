@@ -1,14 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import styles from './BackLink.module.scss';
+import styles from "./BackLink.module.scss";
 
-function BackLink({ text, link }) {
+function BackLink({ text, link, onShowPopup }) {
   return (
-    <Link to={link} className={styles.link}>
-      <div></div>
-      <span>{text}</span>
-    </Link>
+    <>
+      <Link to={link} className={styles.link} onClick={onShowPopup}>
+        <div></div>
+        <span>{text}</span>
+      </Link>
+    </>
   );
 }
 

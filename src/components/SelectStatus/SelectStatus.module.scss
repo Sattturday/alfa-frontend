@@ -26,6 +26,7 @@
   background-repeat: no-repeat;
   background-position-x: calc(100% - 10px);
   background-position-y: center;
+  height: 28px;
 }
 .dropdown {
   position: relative;
@@ -42,6 +43,7 @@
   background-color: $main-white-secondary-2;
   width: 150px;
   border-radius: 8px;
+  
   z-index: 3;
 
   li {
