@@ -1,8 +1,9 @@
 @import '../../styles/abstract/constants.scss';
 @import '../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/placeholders.scss';
 
 .card {
-  padding: 20px;
+  padding: 19px 20px;
   width: 384px;
   display: grid;
   grid-template-columns: 48px auto 64px;
@@ -12,6 +13,11 @@
   border: 1px solid $main-white-secondary-3;
   border-radius: 28px;
   cursor: pointer;
+  @extend %transition-all;
+
+  &:hover {
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
+  }
 
   &.Created {
     border: 1px solid $system-red;

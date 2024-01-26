@@ -53,7 +53,7 @@ function ProgressBar({
       className={isSmall ? styles.progressBarSmall : styles.progressBar}
       value={value}
       height={isSmall ? 64 : 128}
-      size={isSmall ? 'm' : 'xl'}
+      size='xl'
       title={isSmall ? `${value}` : `${value}%`}
       icon={isDeadline && iconImage}
       iconComplete={isVerified && iconCompleteImage}
