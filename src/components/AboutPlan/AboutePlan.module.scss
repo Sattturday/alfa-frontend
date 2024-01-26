@@ -1,0 +1,46 @@
+@import '../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/constants.scss';
+
+.root {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  border-radius: 30px;
+  @include border;
+
+  .top {
+    display: flex;
+    gap: 35px;
+  }
+
+  .bot {
+    display: flex;
+    gap: 50px;
+  }
+
+  .infoColumn {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+
+    h2 {
+      @include section-title;
+    }
+
+    .subtitle {
+      padding-top: 4px;
+      @include text1-gray;
+    }
+
+    .description {
+      max-width: 760px;
+      padding-top: 16px;
+      @include text;
+    }
+
+    .data {
+      padding-top: 16px;
+      @include text1;
+    }
+  }
+}

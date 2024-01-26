@@ -1,0 +1,30 @@
+@import "../../styles/abstract/constants.scss";
+@import "../../styles/abstract/mixins.scss";
+
+.employee {
+  display: flex;
+  flex-direction: column;
+}
+
+.taskCard_list {
+  display: flex;
+  margin: 32px 0;
+  flex-direction: row;
+  justify-content: space-between;
+
+  h2 {
+    @include section-title
+  }
+
+  button {
+    @include button;
+    border: 1px solid $main-black-1;
+    border-radius: 12px;
+    width: 80px;
+    height: 56px;
+    background-image: url(../../assets/img/icon_listcomments.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+    
+}
