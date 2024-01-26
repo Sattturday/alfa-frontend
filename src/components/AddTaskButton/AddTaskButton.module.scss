@@ -1,0 +1,24 @@
+@import "../../styles/abstract/mixins.scss";
+@import "../../styles/abstract/constants.scss";
+
+.button {
+  @include button;
+  border: 1px solid $main-white-secondary-3;
+  border-radius: 16px;
+  width: 282px;
+  height: 192px;
+  background-image: url(../../assets/img/icon_plus.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: white;
+  transition: ease 0.9s;
+
+  &:hover {
+    background-color: $main-white-2;
+  }
+
+  &:disabled {
+    background-color: $main-white-3;
+    background-image: url(../../assets/img/icon_plus_default.svg);
+  }
+}
