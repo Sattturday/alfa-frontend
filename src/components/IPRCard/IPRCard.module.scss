@@ -1,7 +1,7 @@
 @import "../../styles/abstract/mixins.scss";
 @import "../../styles/abstract/constants.scss";
 
-article {
+.card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -11,66 +11,62 @@ article {
   border-radius: 30px;
   padding: 40px;
   margin-bottom: 32px;
-}
 
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-
-h3 {
-  @include text($font-weight: $fw-bold, $font-size: 20px, $line-height: 24px);
-}
-
-p {
-  margin: 4px 0 0 0;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-}
-
-ul {
-  margin: 0 0 0 26px;
-  padding: 0;
-
-  li {
-    @include text($color: $main-black-secondary-2);
-    overflow: visible;
-}
-}
-
-
-
-.form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 760px;
-  height: 304px;
-  
-  .input {
-    @include text($color: $main-black-secondary-1);
-    background-color: $main-white-secondary-1;
-    border-radius: 8px;
-    width: 100%;
-    height: 52px;
-    border: none;
-    padding: 16px 12px;
-    outline: none;
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
-  .input:nth-child(3) {
-    height: 88px;
-  }
-  .input:nth-child(4) {
-    height: 56px;
-    width: 344px;
-  }
-}
 
-// Решение инпута даты с псевдоэлементом
-/* input[type="date"]:before {
+  h3 {
+    @include text($font-weight: $fw-bold, $font-size: 20px, $line-height: 24px);
+  }
+
+  p {
+    margin: 4px 0 0 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  ul {
+    margin: 0 0 0 26px;
+    padding: 0;
+
+    li {
+      @include text($color: $main-black-secondary-2);
+      overflow: visible;
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 760px;
+    height: 304px;
+
+    .input {
+      @include text($color: $main-black-secondary-1);
+      background-color: $main-white-secondary-1;
+      border-radius: 8px;
+      width: 100%;
+      height: 52px;
+      border: none;
+      padding: 16px 12px;
+      outline: none;
+    }
+    .input:nth-child(3) {
+      height: 88px;
+    }
+    .input:nth-child(4) {
+      height: 56px;
+      width: 344px;
+    }
+  }
+
+  // Решение инпута даты с псевдоэлементом
+  /* input[type="date"]:before {
   @include text($color: $main-black-secondary-1);
   content: attr(placeholder) !important;
   margin-right: 15px;
@@ -80,30 +76,26 @@ input[type="date"]:valid:before {
   content: "";
 } */
 
-.instruction_container {
-  display: flex;
-  flex-direction: column;
-  width: 341px;
-  height: 220px;
-  padding: 12px;
+  .instruction_container {
+    display: flex;
+    flex-direction: column;
+    width: 341px;
+    height: 220px;
+    padding: 12px;
 
-  img {
-    width: 46px;
-    height: 48px;
-    margin-bottom: 8px;
+    img {
+      width: 46px;
+      height: 48px;
+      margin-bottom: 8px;
+    }
   }
-}
 
-button {
-  @include button;
-  @include text1($color: $main-white-1);
-  background-color: $main-red-1;
-  border-radius: 12px;
-  width: 127px;
-  height: 56px;
-  
-  &:disabled {
-    @include text1($color: $main-white-secondary-3);
-    background-color:$main-white-2;
+  .button {
+    width: 127px;
+    height: 56px;
+
+    &:disabled {
+      cursor: default;
+    }
   }
 }
