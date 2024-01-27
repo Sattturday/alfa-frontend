@@ -7,9 +7,6 @@
   border-radius: 16px;
   width: 282px;
   height: 192px;
-  background-image: url(../../assets/img/icon_plus.svg);
-  background-position: center;
-  background-repeat: no-repeat;
   background-color: white;
   transition: ease 0.9s;
 
@@ -19,6 +16,22 @@
 
   &:disabled {
     background-color: $main-white-3;
-    background-image: url(../../assets/img/icon_plus_default.svg);
+    cursor: default;
+  }
+
+  .button_text {
+    @include text($color: $main-white-secondary-3, $font-weight: $fw-bold, $font-size: 20px);
+    padding-bottom: 4px;
+    border-bottom: 4px solid $main-red-1;
+
+    &:hover {
+      border-bottom: 4px solid $main-red-2;
+    }
+
+    &_invalid {
+      @include text($color: $main-white-secondary-3, $font-weight: $fw-bold, $font-size: 20px);
+      padding-bottom: 4px;
+      border-bottom: 4px solid $main-white-secondary-3;
+    }
   }
 }
