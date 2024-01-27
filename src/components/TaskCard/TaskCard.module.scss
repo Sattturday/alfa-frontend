@@ -29,6 +29,9 @@
 
   h3 {
     @include text;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     font-weight: $fw-bold;
     font-size: 20px;
     line-height: 24px;
@@ -39,4 +42,7 @@
 .card__description {
   @include text($color: $main-black-secondary-2);
   margin-top: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }

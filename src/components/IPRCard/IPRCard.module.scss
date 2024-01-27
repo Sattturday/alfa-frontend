@@ -46,37 +46,11 @@
     width: 760px;
     height: 304px;
 
-    .input {
-      @include text($color: $main-black-secondary-1);
-      background-color: $main-white-secondary-1;
-      border-radius: 8px;
-      width: 100%;
-      height: 52px;
-      border: none;
-      padding: 16px 12px;
-      outline: none;
-    }
-    .input:nth-child(3) {
-      height: 88px;
-    }
-    .input:nth-child(4) {
-      height: 56px;
+    .input_date {
       width: 344px;
     }
-  }
 
-  // Решение инпута даты с псевдоэлементом
-  /* input[type="date"]:before {
-  @include text($color: $main-black-secondary-1);
-  content: attr(placeholder) !important;
-  margin-right: 15px;
-}
-input[type="date"]:focus:before,
-input[type="date"]:valid:before {
-  content: "";
-} */
-
-  .instruction_container {
+    .instruction_container {
     display: flex;
     flex-direction: column;
     width: 341px;
@@ -89,7 +63,7 @@ input[type="date"]:valid:before {
       margin-bottom: 8px;
     }
   }
-
+  }
   .button {
     width: 127px;
     height: 56px;
