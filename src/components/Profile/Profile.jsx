@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 
-import { Button } from "@alfalab/core-components-button";
+import { Button } from '@alfalab/core-components/button';
 import { CheckmarkMIcon } from "@alfalab/icons-glyph/CheckmarkMIcon";
 import { PauseCompactMIcon } from "@alfalab/icons-glyph/PauseCompactMIcon";
 import { TrashCanLineMIcon } from "@alfalab/icons-glyph/TrashCanLineMIcon";

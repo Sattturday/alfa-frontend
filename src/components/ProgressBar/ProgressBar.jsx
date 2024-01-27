@@ -1,5 +1,5 @@
 import React from 'react';
-import { CircularProgressBar } from '@alfalab/core-components-circular-progress-bar';
+import { CircularProgressBar } from '@alfalab/core-components/circular-progress-bar';
 
 import iconCheck from '../../assets/img/icon-check.svg';
 import iconDeadline from '../../assets/img/deadline-icon.svg';
