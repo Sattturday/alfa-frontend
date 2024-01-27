@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./IPRCard.module.scss";
 import FriendlyPic from "../../assets/img/friendly-pic.png";
 import ExitConfirmPopup from "../ExitConfirmPopup/ExitConfirmPopup";
-import { Button } from "@alfalab/core-components-button";
+import { Button } from '@alfalab/core-components/button';
 
 function IPRCard({ onClickCancel, showPopup, onClickOk }) {
   return (

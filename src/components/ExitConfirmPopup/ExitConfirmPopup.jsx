@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./ExitConfirmPopup.module.scss";
-import { Button } from "@alfalab/core-components-button";
+import { Button } from '@alfalab/core-components/button';
 
 // title - текст заголовка
 // description - текст описания
