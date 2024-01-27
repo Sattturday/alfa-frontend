@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "@alfalab/core-components": "^44.6.0",
+=======
+>>>>>>> develop
     "@alfalab/core-components-button": "^11.2.0",
     "@alfalab/core-components-circular-progress-bar": "^3.4.2",
     "@alfalab/icons": "^3.204.0",
