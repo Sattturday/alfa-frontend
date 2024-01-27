@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { CircularProgressBar } from '@alfalab/core-components/circular-progress-bar';
 
 import iconCheck from '../../assets/img/icon-check.svg';
-import iconDeadline from '../../assets/img/deadline-icon.svg';
 import iconCheckSmall from '../../assets/img/icon-check-small.svg';
-import iconDeadlineSmall from '../../assets/img/deadline-icon-small.svg';
 import fakeBar from '../../assets/img/fake-progress-bar.svg';
 
 import styles from './ProgressBar.module.scss';
@@ -18,10 +16,10 @@ function ProgressBar({
   isNewCard = false,
   isNull = false,
 }) {
-  const [progressColor, setProgressColor] = React.useState('');
-  const [contentColor, setContentColor] = React.useState();
+  const [progressColor, setProgressColor] = useState('');
+  const [contentColor, setContentColor] = useState();
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (isDeadline) {
       setProgressColor('#FA9313');
     } else {
@@ -29,20 +27,17 @@ function ProgressBar({
     }
   }, [isDeadline]);
 
-  React.useEffect(() => {
-    if (isSmall) {
+  useEffect(() => {
+    if (isSmall && isDeadline) {
+      setContentColor('#FA9313');
+    } else if (isSmall) {
       setContentColor('#0cc44d');
-    }
-    if (isNull) {
+    } else if (isNull) {
       setContentColor('#7d7d85');
     } else {
       setContentColor('#0e0e0e');
     }
-  }, [isSmall, isNull]);
-
-  const iconImage = () => {
-    return <img src={isSmall ? iconDeadlineSmall : iconDeadline} alt='watch' />;
-  };
+  }, [isSmall, isNull, isDeadline]);
 
   const iconCompleteImage = () => {
     return <img src={isSmall ? iconCheckSmall : iconCheck} alt='check-mark' />;
@@ -55,7 +50,6 @@ function ProgressBar({
       height={isSmall ? 64 : 128}
       size='xl'
       title={isSmall ? `${value}` : `${value}%`}
-      icon={isDeadline && iconImage}
       iconComplete={isVerified && iconCompleteImage}
       progressStrokeColor={isCancel ? '#D2D3D9' : progressColor}
       contentColor={isCancel ? '#D2D3D9' : contentColor}

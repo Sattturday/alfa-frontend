@@ -51,7 +51,7 @@ export const IDPcardsData = [
         status: 'noCompleted',
         linkURL: 'string',
         comments: [],
-      }
+      },
     ],
   },
   {
@@ -255,4 +255,10 @@ export const IDPcardsData = [
       'https://images.unsplash.com/photo-1704642407551-7c4c82f644b7?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     tasks: [],
   },
+];
+
+export const actionButtons = [
+  { title: 'Завершить', id: 'complete' },
+  { title: 'Отменить', id: 'cancel' },
+  { title: 'Удалить', id: 'delete' },
 ];
