@@ -2,7 +2,20 @@ import React from "react";
 import styles from "./ExitConfirmPopup.module.scss";
 import { Button } from "@alfalab/core-components-button";
 
-function ExitConfirmPopup({ showPopup, onClickCancel, onClickOk }) {
+// title - текст заголовка
+// description - текст описания
+// leftButtonText - текст левой кнопки
+// rightButtonTex - текст правой кнопки
+
+function ExitConfirmPopup({
+  showPopup,
+  onClickCancel,
+  onClickOk,
+  title,
+  description,
+  leftButtonText,
+  rightButtonText
+}) {
   return (
     <div
       onClick={onClickCancel}
@@ -13,10 +26,8 @@ function ExitConfirmPopup({ showPopup, onClickCancel, onClickOk }) {
       }
     >
       <div className={styles.popup_container}>
-        <h2 className={styles.title}>
-          Вы уверены, что хотите прекратить создание ИПР?
-        </h2>
-        <p className={styles.text}>Введённые вами данные не сохранятся.</p>
+        <h2 className={styles.title}>{title}</h2>
+        <p className={styles.text}>{description}</p>
         <div className={styles.button_container}>
           <Button
             name="cancel"
@@ -26,7 +37,7 @@ function ExitConfirmPopup({ showPopup, onClickCancel, onClickOk }) {
             className={styles.button_cancel}
             onClick={onClickCancel}
           >
-            Отменить
+            {leftButtonText}
           </Button>
           <Button
             name="ok"
@@ -36,7 +47,7 @@ function ExitConfirmPopup({ showPopup, onClickCancel, onClickOk }) {
             onClick={onClickOk}
             shape=""
           >
-            Ок
+            {rightButtonText}
           </Button>
         </div>
       </div>

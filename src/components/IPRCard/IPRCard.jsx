@@ -50,6 +50,10 @@ function IPRCard({ onClickCancel, showPopup, onClickOk }) {
         showPopup={showPopup}
         onClickCancel={onClickCancel}
         onClickOk={onClickOk}
+        title='Вы уверены, что хотите прекратить создание ИПР?'
+        description='Введённые вами данные не сохранятся.'
+        leftButtonText='Отменить'
+        rightButtonText='Ок'
       />
     </>
   );
