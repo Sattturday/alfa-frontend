@@ -1,9 +1,12 @@
-import React from 'react';
-import ProgressBar from '../ProgressBar/ProgressBar';
+import React from "react";
+import { useLocation } from "react-router-dom";
 
-import styles from './AboutePlan.module.scss';
+import ProgressBar from "../ProgressBar/ProgressBar";
+
+import styles from "./AboutePlan.module.scss";
 
 function AboutPlan() {
+  const { pathname } = useLocation();
   return (
     <section className={styles.root}>
       <div className={styles.infoColumn}>
@@ -17,14 +20,17 @@ function AboutPlan() {
         </p>
         <p className={styles.data}>До 12.04.2024</p>
       </div>
-      <ProgressBar
-        isSmall={false}
-        value={65}
-        isVerified={false}
-        isDeadline={false}
-        isCancel={false}
-        isNewCard={false}
-      />
+      <div className={styles.rightWrapper}>
+        {pathname === "/management" && <div className={styles.editIcon}></div>}
+        <ProgressBar
+          isSmall={false}
+          value={65}
+          isVerified={false}
+          isDeadline={false}
+          isCancel={false}
+          isNewCard={false}
+        />
+      </div>
     </section>
   );
 }

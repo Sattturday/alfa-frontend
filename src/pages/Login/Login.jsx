@@ -14,6 +14,9 @@ const Login = () => {
       <Link className={styles.login__link} to={'/create-ipr'}>
         create-ipr
       </Link>
+      <Link className={styles.login__link} to={'/management'}>
+        management
+      </Link>
     </div>
   );
 };

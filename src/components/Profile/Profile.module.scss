@@ -2,11 +2,11 @@
 @import '../../styles/abstract/placeholders.scss';
 
 .profile {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
   align-items: center;
-  width: fit-content;
+  width: 100%;
   padding-bottom: 32px;
-  gap: 24px;
 
   img {
     width: 72px;
@@ -17,6 +17,7 @@
   .info {
     display: flex;
     flex-direction: column;
+    margin-left: 24px;
     gap: 12px;
 
     h1 {
@@ -26,5 +27,17 @@
     p {
       @include text1($color: $main-black-secondary-2);
     }
+  }
+
+  .buttonField {
+    display: flex;
+    justify-self: flex-end;
+    align-self: flex-start;
+    gap: 16px;
+  }
+
+  .button {
+    font-family: 'Roboto';
+    line-height: 20px;
   }
 }
