@@ -43,4 +43,30 @@
       @include text1;
     }
   }
+
+  .rightWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .editIcon {
+    align-self: flex-end;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: initial;
+    background-image: url('../../assets/img/icon_edit.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $main-white-2;
+    }
+
+    &:active {
+      background-color: $main-white-3;
+    }
+  }
 }

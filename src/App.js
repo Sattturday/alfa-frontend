@@ -6,6 +6,7 @@ import Employee from './pages/Employee/Employee';
 import Leader from './pages/Leader/Leader';
 import Login from './pages/Login/Login';
 import CreateIPR from './pages/CreateIPR/CreateIPR';
+import Management from './pages/Management/Management';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/leader' element={<Leader />} />
         <Route path='/employee' element={<Employee />} />
         <Route path='/create-ipr' element={<CreateIPR />} />
+        <Route path='/management' element={<Management />} />
       </Routes>
     </div>
   );
