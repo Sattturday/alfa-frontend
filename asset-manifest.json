@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/alfa-frontend/static/css/main.cdbb7eb9.css",
+    "main.js": "/alfa-frontend/static/js/main.34c53726.js",
+    "static/media/roboto_bold.eot": "/alfa-frontend/static/media/roboto_bold.a33598229dc3af1e8291.eot",
+    "static/media/roboto_bold.ttf": "/alfa-frontend/static/media/roboto_bold.63311334b795ce3b76e2.ttf",
+    "static/media/roboto_medium.eot": "/alfa-frontend/static/media/roboto_medium.3f8ebd2064498b66ce32.eot",
+    "static/media/roboto_medium.ttf": "/alfa-frontend/static/media/roboto_medium.d2d7f0c01bffaa5ec8f7.ttf",
+    "static/media/roboto_regular.eot": "/alfa-frontend/static/media/roboto_regular.18b9c674e55e6a14cfc3.eot",
+    "static/media/roboto_regular.ttf": "/alfa-frontend/static/media/roboto_regular.f25bd05915c1a3468d3d.ttf",
+    "static/media/roboto_bold.woff": "/alfa-frontend/static/media/roboto_bold.cf75e672d2e4bab1317b.woff",
+    "static/media/roboto_medium.woff": "/alfa-frontend/static/media/roboto_medium.6d346d53bcf5c8d96df0.woff",
+    "static/media/roboto_regular.woff": "/alfa-frontend/static/media/roboto_regular.b50c0973bfcad699cd65.woff",
+    "static/media/roboto_bold.woff2": "/alfa-frontend/static/media/roboto_bold.d437584c340ac44b059f.woff2",
+    "static/media/roboto_medium.woff2": "/alfa-frontend/static/media/roboto_medium.6fc2089c210dab68fbe7.woff2",
+    "static/media/roboto_regular.woff2": "/alfa-frontend/static/media/roboto_regular.7445b29f1fb59367f5d0.woff2",
+    "static/media/logo.svg": "/alfa-frontend/static/media/logo.aaaad428cd4cb69c83aba4a153227a25.svg",
+    "static/media/icon_edit.svg": "/alfa-frontend/static/media/icon_edit.17da20aa87eaad591189.svg",
+    "static/media/create_idp.svg": "/alfa-frontend/static/media/create_idp.618489c8fb6ea7765951.svg",
+    "static/media/icon_comment_empty.svg": "/alfa-frontend/static/media/icon_comment_empty.48608914cc3714d0bdc14b381b239bf8.svg",
+    "index.html": "/alfa-frontend/index.html",
+    "static/media/icon_comment_full.svg": "/alfa-frontend/static/media/icon_comment_full.1d32f5fc810f4444333dca0b32fb03bd.svg",
+    "static/media/icon_listcomments.svg": "/alfa-frontend/static/media/icon_listcomments.113f6c1f52fde4a5d1b5.svg",
+    "static/media/menu.svg": "/alfa-frontend/static/media/menu.f41223591a90d97e84d8.svg",
+    "static/media/fake-progress-bar.svg": "/alfa-frontend/static/media/fake-progress-bar.10acb234db73527ac4cb5809a6ff89b7.svg",
+    "static/media/icon_arrow_left_hover.svg": "/alfa-frontend/static/media/icon_arrow_left_hover.427dc30eee925c39ab4b.svg",
+    "static/media/icon_arrow_left.svg": "/alfa-frontend/static/media/icon_arrow_left.ec16192edae1c824d85a.svg",
+    "static/media/icon-check-small.svg": "/alfa-frontend/static/media/icon-check-small.9bf38b9aab298f079c26e5ae0321512c.svg",
+    "static/media/icon-check.svg": "/alfa-frontend/static/media/icon-check.e8940663a3b24de866d77eecef3226c1.svg",
+    "static/media/select-arrow-green.svg": "/alfa-frontend/static/media/select-arrow-green.c77dc38569f6e67589084285ea9f09e1.svg",
+    "static/media/select-arrow-red.svg": "/alfa-frontend/static/media/select-arrow-red.3a1506a699da9e52c131470bf11d600e.svg",
+    "static/media/select-arrow-yellow.svg": "/alfa-frontend/static/media/select-arrow-yellow.ca8977524a5c4a3190776834f121baad.svg",
+    "main.cdbb7eb9.css.map": "/alfa-frontend/static/css/main.cdbb7eb9.css.map",
+    "main.34c53726.js.map": "/alfa-frontend/static/js/main.34c53726.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cdbb7eb9.css",
+    "static/js/main.34c53726.js"
+  ]
+}
