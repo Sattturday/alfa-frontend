@@ -36,6 +36,7 @@ function CreateIPR() {
         onClickCancel={handleConfirmCancel}
         showPopup={showPopup}
         onClickOk={handleClickOk}
+        title="Создание ИПР"
       />
       <AddTaskButton />
     </main>
