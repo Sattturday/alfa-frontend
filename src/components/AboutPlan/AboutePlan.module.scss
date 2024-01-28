@@ -29,18 +29,18 @@
 
     .subtitle {
       padding-top: 4px;
-      @include text1-gray;
+      @include text1($font-weight: $fw-regular);
     }
 
     .description {
       max-width: 760px;
       padding-top: 16px;
-      @include text;
+      @include text($color: $main-black-secondary-2, $line-height: 1.25);
     }
 
     .data {
       padding-top: 16px;
-      @include text1;
+      @include text($font-size: 20px, $font-weight: $fw-bold);
     }
   }
 
@@ -60,6 +60,7 @@
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
+    transition: all 0.3s linear;
 
     &:hover {
       background-color: $main-white-2;
