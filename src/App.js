@@ -7,6 +7,7 @@ import Leader from './pages/Leader/Leader';
 import Login from './pages/Login/Login';
 import CreateIPR from './pages/CreateIPR/CreateIPR';
 import Management from './pages/Management/Management';
+import TaskModal from './components/TaskModal/TaskModal';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/create-ipr' element={<CreateIPR />} />
         <Route path='/management' element={<Management />} />
       </Routes>
+      <TaskModal />
     </div>
   );
 }
