@@ -1,11 +1,15 @@
 import React, { useState } from "react";
-import styles from "./IPRCard.module.scss";
-import FriendlyPic from "../../assets/img/friendly-pic.png";
-import ConfirmPopup from "../ConfirmPopup/ConfirmPopup";
 import { Button } from "@alfalab/core-components/button";
 import { Input } from "@alfalab/core-components/input";
 import { Textarea } from "@alfalab/core-components/textarea";
 import { UniversalDateInput } from "@alfalab/core-components/universal-date-input";
+
+import FriendlyPic from "../../assets/img/friendly-pic.png";
+import ConfirmPopup from "../ConfirmPopup/ConfirmPopup";
+import ExitConfirmPopup from '../ExitConfirmPopup/ExitConfirmPopup';
+import Helper from '../Helper/Helper';
+
+import styles from './IPRCard.module.scss';
 
 function IPRCard({ onClickCancel, showPopup, onClickOk }) {
   const [dataValue, setDataValue] = useState("");
@@ -65,21 +69,16 @@ function IPRCard({ onClickCancel, showPopup, onClickOk }) {
               }}
             />
           </form>
-          <section className={styles.instruction_container}>
-            <img src={FriendlyPic} alt="Смайл" />
-            <h3>Принципы заполнения ИПР</h3>
-            <p>Для создания нового ИПР необходимо:</p>
-            <ul>
-              <li>заполнить все поля</li>
-              <li>создать хотя бы одну задачу</li>
-            </ul>
-          </section>
+          <Helper
+            title='Принципы заполнения ИПР'
+            advices={['заполнить все поля', 'создать хотя бы одну задачу']}
+          />
         </div>
         <Button
-          type="submit"
-          form="ipr-form"
+          type='submit'
+          form='ipr-form'
           className={styles.button}
-          view="accent"
+          view='accent'
           disabled
         >
           Создать

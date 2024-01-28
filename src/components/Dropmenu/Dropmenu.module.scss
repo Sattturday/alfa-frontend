@@ -1,13 +1,81 @@
 @import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/placeholders.scss';
 
 .dropmenu {
+  padding: 0;
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  justify-self: end;
+}
+
+.button {
+  @include button;
   width: 40px;
   aspect-ratio: 1 / 1;
-  justify-self: end;
   background-color: $main-white-1;
   background-image: url(../../assets/img/menu.svg);
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 12px;
-  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+  border: 1px solid $main-white-3;
+  @extend %transition-all;
+
+  &.active {
+    background-color: $main-white-3;
+    border: 1px solid $main-white-secondary-3;
+  }
+}
+
+.list {
+  @include list;
+  width: 168px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background: $main-white-1;
+  border: 1px solid $main-white-secondary-2;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.15);
+  visibility: hidden;
+  opacity: 0;
+
+  &.active {
+    top: 110%;
+    z-index: 5;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.item {
+  position: relative;
+}
+
+.label {
+  padding: 16px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  @extend %transition-all;
+
+  span {
+    @include text($line-height: 1.25);
+  }
+
+  &:hover {
+    background-color: $main-white-2;
+  }
+}
+
+.radio {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
 }

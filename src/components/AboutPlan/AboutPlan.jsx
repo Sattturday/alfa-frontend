@@ -1,9 +1,9 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
+import React from 'react';
+import { useLocation } from 'react-router-dom';
 
-import ProgressBar from "../ProgressBar/ProgressBar";
+import ProgressBar from '../ProgressBar/ProgressBar';
 
-import styles from "./AboutePlan.module.scss";
+import styles from './AboutePlan.module.scss';
 
 function AboutPlan() {
   const { pathname } = useLocation();
@@ -21,7 +21,7 @@ function AboutPlan() {
         <p className={styles.data}>До 12.04.2024</p>
       </div>
       <div className={styles.rightWrapper}>
-        {pathname === "/management" && <div className={styles.editIcon}></div>}
+        {pathname === '/management' && <div className={styles.editIcon}></div>}
         <ProgressBar
           isSmall={false}
           value={65}
