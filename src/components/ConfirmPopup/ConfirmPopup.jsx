@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ExitConfirmPopup.module.scss";
+import styles from "./ConfirmPopup.module.scss";
 import { Button } from '@alfalab/core-components/button';
 
 // title - текст заголовка
@@ -7,7 +7,7 @@ import { Button } from '@alfalab/core-components/button';
 // leftButtonText - текст левой кнопки
 // rightButtonTex - текст правой кнопки
 
-function ExitConfirmPopup({
+function ConfirmPopup({
   showPopup,
   onClickCancel,
   onClickOk,
@@ -55,4 +55,4 @@ function ExitConfirmPopup({
   );
 }
 
-export default ExitConfirmPopup;
+export default ConfirmPopup;
