@@ -1,26 +1,26 @@
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { SidePanel } from '@alfalab/core-components/side-panel';
 import { Button } from '@alfalab/core-components/button';
-import styles from './TaskModal.module.scss';
 import { CrossMIcon } from '@alfalab/icons-glyph/CrossMIcon';
 import { IconButton } from '@alfalab/core-components/icon-button';
+
+import { closeTaskModal, setIsActive } from '../../store/taskSlice';
 import Helper from '../Helper/Helper';
+import styles from './TaskModal.module.scss';
 
 const TaskModal = () => {
-  const [open, setOpen] = useState(false);
-  const [isActive, setIsActive] = useState('task');
-  const handleOpen = () => setOpen(true);
+  const dispatch = useDispatch();
+  const { isActive, isOpenTaskModal } = useSelector((state) => state.task);
 
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    dispatch(closeTaskModal());
+  };
 
   return (
     <>
-      {/* <Button view='primary' size='s' onClick={handleOpen}>
-        Primary
-      </Button> */}
       <SidePanel
         key={'getKey()'}
-        open={open}
+        open={isOpenTaskModal}
         onClose={handleClose}
         placement={'right'}
         nativeScrollbar={'native'}
@@ -33,7 +33,7 @@ const TaskModal = () => {
                 className={`${styles.nav_button} ${
                   isActive === 'task' ? styles.active : ''
                 }`}
-                onClick={() => setIsActive('task')}
+                onClick={() => dispatch(setIsActive('task'))}
               >
                 Создать&nbsp;задачу
               </button>
@@ -41,7 +41,7 @@ const TaskModal = () => {
                 className={`${styles.nav_button} ${
                   isActive === 'sample' ? styles.active : ''
                 }`}
-                onClick={() => setIsActive('sample')}
+                onClick={() => dispatch(setIsActive('sample'))}
               >
                 Использовать&nbsp;шаблон
               </button>
