@@ -1,3 +1,11 @@
+export const dirOptions = [
+  { key: '1', content: 'Develop' },
+  { key: '2', content: 'Дизайн' },
+  { key: '3', content: 'QA' },
+  { key: '4', content: 'BA' },
+  { key: '5', content: 'SA' },
+];
+
 export const IDPcardsData = [
   {
     id: '1',
