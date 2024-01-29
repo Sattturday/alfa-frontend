@@ -14,6 +14,7 @@ function Profile({
   avatar = avatarProfile,
   name = `Иванов Иван Иванович`,
   job = `Фронтенд-разработчик`,
+  isOpenAboutPlan,
 }) {
   const { pathname } = useLocation();
 
@@ -24,7 +25,7 @@ function Profile({
         <h1>{name}</h1>
         <p>{job}</p>
       </div>
-      {pathname === "/management" && (
+      {(pathname === "/management" && isOpenAboutPlan) ? (
         <div className={styles.buttonField}>
           <Button
             className={styles.button}
@@ -46,7 +47,7 @@ function Profile({
             leftAddons={<TrashCanLineMIcon />}
           ></Button>
         </div>
-      )}
+      ) : ''}
     </section>
   );
 }
