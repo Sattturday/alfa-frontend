@@ -1,18 +1,24 @@
-import FriendlyPic from '../../assets/img/friendly-pic.png';
-import styles from './Helper.module.scss';
+import { useLocation } from "react-router-dom";
+import FriendlyPic from "../../assets/img/friendly-pic.png";
+import styles from "./Helper.module.scss";
 
-const Helper = ({ title, advices, type = 'list' }) => {
+const Helper = ({ title, advices, type = "list" }) => {
+  const { pathname } = useLocation();
   return (
     <section className={`${styles.helper} ${styles[type]}`}>
-      <img src={FriendlyPic} alt='Смайл' />
+      <img src={FriendlyPic} alt="Смайл" />
       <h3 className={styles.title}>{title}</h3>
-      <ul className={styles.advices}>
-        {advices.map((advice, index) => (
-          <li key={index} className={styles.item}>
-            <p>{advice}</p>
-          </li>
-        ))}
-      </ul>
+      {pathname === "/" ? (
+        <p className={styles.text}>{advices}</p>
+      ) : (
+        <ul className={styles.advices}>
+          {advices.map((advice, index) => (
+            <li key={index} className={styles.item}>
+              <p>{advice}</p>
+            </li>
+          ))}
+        </ul>
+      )}
     </section>
   );
 };

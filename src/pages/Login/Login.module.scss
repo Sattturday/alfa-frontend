@@ -2,10 +2,63 @@
 @import '../../styles/abstract/placeholders.scss';
 
 .login {
-  padding: 30px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+
+  h1 {
+    @include section-title;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    height: 326px;
+    gap: 228px;
+    margin-top: 32px;
+  }
+
+  .form {
+    width: 588px;
+    min-height: 324px;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    gap: 16px;
+    
+    padding: 40px 40px;
+    @include border;
+
+    h3 {
+      @include text($font-size: 20px, $font-weight: $fw-bold);
+      margin-bottom: 4px;
+    }
+
+    .button__field {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .button {
+      width: 246px;
+
+      &:disabled {
+        background-color: $main-white-2;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+.wrapperLink {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 70px
 }
 
 .login__link {
