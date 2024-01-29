@@ -2,17 +2,11 @@
 @import '../../styles/abstract/constants.scss';
 @import '../../styles/abstract/mixins.scss';
 
-.create_task {
+.create_sample {
   padding-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 28px;
-}
-
-.button {
-  width: 192px;
-
-  //color: $main-white-secondary-3;
+  gap: 16px;
 }
 
 .samples {
@@ -24,7 +18,9 @@
   @extend %font-prim;
 }
 
-.switch {
-  @include text($line-height: 1.25);
-  @extend %font-prim;
+.button {
+  margin-top: 12px;
+  width: 192px;
+
+  //color: $main-white-secondary-3;
 }

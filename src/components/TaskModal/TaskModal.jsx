@@ -8,9 +8,10 @@ import {
   setIsActive,
   setDirSample,
 } from '../../store/taskSlice';
+import CreateTask from '../CreateTask/CreateTask';
+import CreateSample from '../CreateSample/CreateSample';
 
 import styles from './TaskModal.module.scss';
-import CreateTask from '../CreateTask/CreateTask';
 
 const TaskModal = () => {
   const dispatch = useDispatch();
@@ -57,10 +58,17 @@ const TaskModal = () => {
           </div>
         </SidePanel.Header>
         <SidePanel.Content>
-          <CreateTask
-            handleClose={handleClose}
-            handleChange={handleChangeSelect}
-          />
+          {isActive === 'task' ? (
+            <CreateTask
+              handleClose={handleClose}
+              handleChange={handleChangeSelect}
+            />
+          ) : (
+            <CreateSample
+              handleClose={handleClose}
+              handleChange={handleChangeSelect}
+            />
+          )}
         </SidePanel.Content>
       </SidePanel>
     </>

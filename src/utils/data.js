@@ -1,9 +1,59 @@
 export const dirOptions = [
-  { key: '1', content: 'Develop' },
-  { key: '2', content: 'Дизайн' },
-  { key: '3', content: 'QA' },
-  { key: '4', content: 'BA' },
-  { key: '5', content: 'SA' },
+  { key: '1', content: 'Фронтенд' },
+  { key: '2', content: 'Бэкэнд' },
+  { key: '3', content: 'Дизайн' },
+  { key: '4', content: 'QA' },
+  { key: '5', content: 'BA' },
+  { key: '6', content: 'SA' },
+];
+
+export const dirAllOptions = [
+  { key: '0', content: 'Показать все' },
+  { key: '1', content: 'Фронтенд' },
+  { key: '2', content: 'Бэкэнд' },
+  { key: '3', content: 'Дизайн' },
+  { key: '4', content: 'QA' },
+  { key: '5', content: 'BA' },
+  { key: '6', content: 'SA' },
+];
+
+export const samplesData = [
+  {
+    id: '1',
+    title: 'Проснись',
+    description: 'Встань с кровати',
+    linkURL: 'https://www.example/',
+  },
+  {
+    id: '2',
+    title: 'И пой',
+    description: 'Попробуй',
+    linkURL: 'https://www.example/',
+  },
+  {
+    id: '3',
+    title: 'Выпей чаю',
+    description: 'Черного',
+    linkURL: 'https://www.example/',
+  },
+  {
+    id: '4',
+    title: 'Смотри',
+    description: 'За собой',
+    linkURL: 'https://www.example/',
+  },
+  {
+    id: '5',
+    title: 'Учись',
+    description: 'Работа с компонентами',
+    linkURL: 'https://www.example/',
+  },
+  {
+    id: '6',
+    title: 'И еще',
+    description: 'Прочитай книгу',
+    linkURL: 'https://www.example/',
+  },
 ];
 
 export const IDPcardsData = [

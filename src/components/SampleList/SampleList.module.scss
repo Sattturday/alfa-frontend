@@ -1,0 +1,55 @@
+@import '../../styles/abstract/placeholders.scss';
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/mixins.scss';
+
+.box {
+  max-height: 320px;
+  padding: 16px 4px;
+  border-radius: 8px;
+  border: 1px solid $main-black-secondary-2;
+}
+
+.list {
+  @include list;
+  padding: 0 8px 0 4px;
+  max-height: 288px;
+  display: flex;
+  flex-direction: column;
+  background: $main-white-1;
+  overflow-y: auto;
+  @include scrollbars;
+}
+
+.item {
+  padding: 8px 0;
+  border-bottom: 1px solid $main-white-secondary-3;
+  @extend %transition-all;
+
+  p {
+    @include text($line-height: 1.25);
+    @extend %font-prim;
+    padding: 12px 16px;
+    cursor: pointer;
+  }
+
+  &.active {
+    p {
+      background: $main-white-3;
+    }
+  }
+
+  &:hover {
+    p {
+      background-color: $main-white-2;
+    }
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
