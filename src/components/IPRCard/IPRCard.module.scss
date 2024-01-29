@@ -1,5 +1,5 @@
-@import "../../styles/abstract/mixins.scss";
-@import "../../styles/abstract/constants.scss";
+@import '../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/constants.scss';
 
 .card {
   display: flex;
@@ -49,21 +49,8 @@
     .input_date {
       width: 344px;
     }
-
-    .instruction_container {
-    display: flex;
-    flex-direction: column;
-    width: 341px;
-    height: 220px;
-    padding: 12px;
-
-    img {
-      width: 46px;
-      height: 48px;
-      margin-bottom: 8px;
-    }
   }
-  }
+
   .button {
     width: 127px;
     height: 56px;
