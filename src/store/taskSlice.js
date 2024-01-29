@@ -6,7 +6,7 @@ const taskSlice = createSlice({
     isOpenTaskModal: false,
     isActive: 'task',
     isSaveSample: false,
-    tasks: [],
+    dirSample: {},
   },
   reducers: {
     openTaskModal(state) {
@@ -18,12 +18,25 @@ const taskSlice = createSlice({
     setIsActive(state, action) {
       state.isActive = action.payload;
     },
-    toggleSaveSample(state) {
+    setDirSample(state, action) {
+      state.dirSample = action.payload;
+    },
+    onSaveSample(state) {
       state.isSaveSample = !state.isSaveSample;
+    },
+    offSaveSample(state) {
+      state.isSaveSample = !state.isSaveSample;
+      state.dirSample = {};
     },
   },
 });
 
-export const { openTaskModal, closeTaskModal, setIsActive, toggleSaveSample } =
-  taskSlice.actions;
+export const {
+  openTaskModal,
+  closeTaskModal,
+  setIsActive,
+  setDirSample,
+  onSaveSample,
+  offSaveSample,
+} = taskSlice.actions;
 export default taskSlice.reducer;

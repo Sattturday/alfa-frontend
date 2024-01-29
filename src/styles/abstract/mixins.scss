@@ -30,6 +30,21 @@
   user-select: none;
 }
 
+@mixin scrollbars {
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $main-white-secondary-3;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $main-black-secondary-2;
+    border-radius: 8px;
+    height: 32px;
+    width: 4px;
+  }
+}
+
 //для рамок!
 @mixin border($color: $main-white-secondary-3) {
   border: 1px solid $color;
@@ -40,7 +55,7 @@
   margin: 0;
   color: $color;
   font-size: 32px;
-  font-weight: $font-weight;//700
+  font-weight: $font-weight; //700
   line-height: 1.25;
 }
 
@@ -61,8 +76,8 @@
 ) {
   margin: 0;
   color: $color;
-  font-size: $font-size; 
-  font-weight: $font-weight;//400
+  font-size: $font-size;
+  font-weight: $font-weight; //400
   line-height: $line-height;
 }
 
@@ -95,13 +110,15 @@
 }
 
 //текст для даты
-@mixin text1-date($color: $main-black-1,
+@mixin text1-date(
+  $color: $main-black-1,
   $font-size: 12px,
   $font-weight: $fw-medium,
-  $line-height: 16px) {
+  $line-height: 16px
+) {
   margin: 0;
   color: $color;
-  font-size: $font-size;//500
+  font-size: $font-size; //500
   font-weight: $font-weight;
   line-height: $line-height;
   text-overflow: ellipsis;
