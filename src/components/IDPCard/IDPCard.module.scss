@@ -39,7 +39,6 @@
 
     .deadline {
       @include text1-gray;
-      background-color: $main-white-3;
     }
   }
 
@@ -52,7 +51,6 @@
 
     .deadline {
       @include text1($system-green);
-      background-color: $system-light-green;
     }
   }
 
@@ -131,8 +129,6 @@
   @include text1-gray;
   width: 196px;
   padding: 8px 16px;
-  border-radius: 12px;
-  background-color: $main-white-2;
   grid-row: 2 / 3;
   grid-column: 1 / 3;
   align-self: end;

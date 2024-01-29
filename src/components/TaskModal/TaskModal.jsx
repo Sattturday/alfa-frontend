@@ -3,14 +3,23 @@ import { SidePanel } from '@alfalab/core-components/side-panel';
 import { Button } from '@alfalab/core-components/button';
 import { CrossMIcon } from '@alfalab/icons-glyph/CrossMIcon';
 import { IconButton } from '@alfalab/core-components/icon-button';
+import { Switch } from '@alfalab/core-components/switch';
 
-import { closeTaskModal, setIsActive } from '../../store/taskSlice';
+import {
+  closeTaskModal,
+  setIsActive,
+  toggleSaveSample,
+} from '../../store/taskSlice';
 import Helper from '../Helper/Helper';
+import TaskForm from '../TaskForm/TaskForm';
+
 import styles from './TaskModal.module.scss';
 
 const TaskModal = () => {
   const dispatch = useDispatch();
-  const { isActive, isOpenTaskModal } = useSelector((state) => state.task);
+  const { isActive, isOpenTaskModal, isSaveSample } = useSelector(
+    (state) => state.task
+  );
 
   const handleClose = () => {
     dispatch(closeTaskModal());
@@ -49,14 +58,38 @@ const TaskModal = () => {
           </div>
         </SidePanel.Header>
         <SidePanel.Content>
-          <div>
+          <div className={styles.container}>
             <Helper
               title='Чтобы создать задачу'
               advices={['введите название']}
             />
+            <TaskForm />
+            <Helper
+              title='Чтобы создать шаблон'
+              advices={['выберите направление']}
+            />
+            <Switch
+              block={true}
+              checked={isSaveSample}
+              label='Сохранить как шаблон'
+              onChange={(e) => {
+                if (e.target === e.currentTarget) {
+                  console.log('toggle');
+                  dispatch(toggleSaveSample());
+                }
+              }}
+            />
+            <Button
+              className={styles.button}
+              view='primary'
+              size='m'
+              onClick={handleClose}
+            >
+              Добавить задачу
+            </Button>
           </div>
         </SidePanel.Content>
-        <SidePanel.Footer>
+        {/* <SidePanel.Footer>
           <SidePanel.Controls
             primary={
               <Button view='primary' size='s' onClick={handleClose}>
@@ -64,7 +97,7 @@ const TaskModal = () => {
               </Button>
             }
           />
-        </SidePanel.Footer>
+        </SidePanel.Footer> */}
       </SidePanel>
     </>
   );
