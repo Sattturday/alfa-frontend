@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/alfa-frontend/static/css/main.9154fc84.css",
-    "main.js": "/alfa-frontend/static/js/main.81cc53de.js",
+    "main.css": "/alfa-frontend/static/css/main.36530856.css",
+    "main.js": "/alfa-frontend/static/js/main.007667cd.js",
     "static/media/roboto_bold.eot": "/alfa-frontend/static/media/roboto_bold.a33598229dc3af1e8291.eot",
     "static/media/roboto_bold.ttf": "/alfa-frontend/static/media/roboto_bold.63311334b795ce3b76e2.ttf",
     "static/media/roboto_medium.eot": "/alfa-frontend/static/media/roboto_medium.3f8ebd2064498b66ce32.eot",
@@ -30,11 +30,11 @@
     "static/media/select-arrow-green.svg": "/alfa-frontend/static/media/select-arrow-green.c77dc38569f6e67589084285ea9f09e1.svg",
     "static/media/select-arrow-red.svg": "/alfa-frontend/static/media/select-arrow-red.3a1506a699da9e52c131470bf11d600e.svg",
     "static/media/select-arrow-yellow.svg": "/alfa-frontend/static/media/select-arrow-yellow.ca8977524a5c4a3190776834f121baad.svg",
-    "main.9154fc84.css.map": "/alfa-frontend/static/css/main.9154fc84.css.map",
-    "main.81cc53de.js.map": "/alfa-frontend/static/js/main.81cc53de.js.map"
+    "main.36530856.css.map": "/alfa-frontend/static/css/main.36530856.css.map",
+    "main.007667cd.js.map": "/alfa-frontend/static/js/main.007667cd.js.map"
   },
   "entrypoints": [
-    "static/css/main.9154fc84.css",
-    "static/js/main.81cc53de.js"
+    "static/css/main.36530856.css",
+    "static/js/main.007667cd.js"
   ]
 }
