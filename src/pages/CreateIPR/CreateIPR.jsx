@@ -4,7 +4,8 @@ import { useSelector } from "react-redux";
 import BackLink from "../../components/BackLink/BackLink";
 import Profile from "../../components/Profile/Profile";
 import IPRCard from "../../components/IPRCard/IPRCard";
-import AddTaskButton from "../../components/AddTaskButton/AddTaskButton";
+import ShowList from "../../components/ShowList/ShowList";
+import { IDPcardsData } from "../../utils/data";
 import styles from "./CreateIPR.module.scss";
 
 function CreateIPR() {
@@ -19,7 +20,7 @@ function CreateIPR() {
       />
       <Profile />
       <IPRCard title="Создание ИПР" />
-      <AddTaskButton />
+      <ShowList type='Task' cards={IDPcardsData} />
     </main>
   );
 }
