@@ -51,7 +51,7 @@ function SelectStatus({ task }) {
     if (e.currentTarget.id === "noCompleted") {
       setInputValue(e.currentTarget.id);
       setButtonStyle(rebButton);
-      setValue("Не выполнено");
+      setValue("Ожидание");
     }
     hideList();
   };
@@ -65,7 +65,7 @@ function SelectStatus({ task }) {
       setValue("В работе");
     } else if (task.status === "noCompleted") {
       setButtonStyle(rebButton);
-      setValue("Не выполнено");
+      setValue("Ожидание");
     }
   }, []);
 
@@ -93,7 +93,7 @@ function SelectStatus({ task }) {
             className="dropdown__list-item"
             id="noCompleted"
           >
-            Не выполнено
+            Ожидание
           </li>
           <li
             onClick={changeButton}

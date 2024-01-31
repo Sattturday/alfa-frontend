@@ -40,9 +40,10 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  background-color: $main-white-secondary-2;
+  background-color: white;
   width: 150px;
   border-radius: 8px;
+  border: 1px solid $main-white-secondary-2;
   
   z-index: 3;
 
@@ -64,6 +65,10 @@
 
     &:nth-of-type(3) {
       color: $system-green;
+    }
+
+    &:hover {
+      background-color: $main-white-2
     }
   }
 }
