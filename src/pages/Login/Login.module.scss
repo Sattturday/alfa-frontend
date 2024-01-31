@@ -25,9 +25,13 @@
     flex-direction: column;
     border-radius: 30px;
     gap: 16px;
-    
+
     padding: 40px 40px;
     @include border;
+
+    input {
+      font-family: 'Roboto';
+    }
 
     h3 {
       @include text($font-size: 20px, $font-weight: $fw-bold);
@@ -41,18 +45,15 @@
 
     .button {
       width: 246px;
+      font-family: 'Roboto';
 
       &:disabled {
         background-color: $main-white-2;
+        border: none;
       }
     }
   }
 }
-
-
-
-
-
 
 .wrapperLink {
   display: flex;
