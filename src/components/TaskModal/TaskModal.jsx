@@ -4,13 +4,15 @@ import { SidePanel } from '@alfalab/core-components/side-panel';
 import { closeTaskModal, setDirSample } from '../../store/taskSlice';
 import CreateTask from '../CreateTask/CreateTask';
 import CreateSample from '../CreateSample/CreateSample';
+import TaskModalNav from '../TaskModalNav/TaskModalNav';
+import AboutTask from '../AboutTask/AboutTask';
+import Comments from '../Comments/Comments';
 
 import styles from './TaskModal.module.scss';
-import TaskModalNav from '../TaskModalNav/TaskModalNav';
 
 const TaskModal = () => {
   const dispatch = useDispatch();
-  const { isNavItemActive, isOpenTaskModal } = useSelector(
+  const { typeTaskModal, isNavItemActive, isOpenTaskModal } = useSelector(
     (state) => state.task
   );
 
@@ -33,23 +35,37 @@ const TaskModal = () => {
         nativeScrollbar={'native'}
       >
         <SidePanel.Header hasCloser={false}>
-          <TaskModalNav
-            navItems={['Создать задачу', 'Использовать шаблон']}
-            handleClose={handleClose}
-          />
-        </SidePanel.Header>
-        <SidePanel.Content>
-          {isNavItemActive === 'primary' ? (
-            <CreateTask
+          {typeTaskModal === 'createTask' ? (
+            <TaskModalNav
+              navItems={['Создать задачу', 'Использовать шаблон']}
               handleClose={handleClose}
-              handleChange={handleChangeSelect}
             />
           ) : (
-            <CreateSample
+            <TaskModalNav
+              navItems={['О задаче', 'Комментарии']}
               handleClose={handleClose}
-              handleChange={handleChangeSelect}
             />
           )}
+        </SidePanel.Header>
+        <SidePanel.Content>
+          {typeTaskModal === 'createTask' &&
+            (isNavItemActive === 'primary' ? (
+              <CreateTask
+                handleClose={handleClose}
+                handleChange={handleChangeSelect}
+              />
+            ) : (
+              <CreateSample
+                handleClose={handleClose}
+                handleChange={handleChangeSelect}
+              />
+            ))}
+          {typeTaskModal === 'aboutTask' &&
+            (isNavItemActive === 'primary' ? (
+              <AboutTask handleChange={handleChangeSelect} />
+            ) : (
+              <Comments />
+            ))}
         </SidePanel.Content>
       </SidePanel>
     </>

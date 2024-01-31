@@ -73,15 +73,38 @@ export const IDPcardsData = [
     tasks: [
       {
         id: '1',
-        title: 'Проснись',
+        title: 'Посмотреть видео',
         deadline: '2024-01-22',
-        description: 'Встань с кровати',
+        description:
+          'Очень отличное видео, тебе точно понравится, не забудь попкорн.',
         status: 'done',
-        linkURL: 'string',
+        linkURL:
+          'https://core-ds.github.io/core-components/master/?path=/docs/button--docs',
         comments: [
           {
             id: '1',
-            content: 'Комментарий',
+            content: 'Длинный комментарий без ограничения по количеству строк',
+            author: 'Иванов Иван Иванович',
+            postdate: '2024-01-22',
+          },
+          {
+            id: '2',
+            content:
+              'Длинный комментарий без ограничения по количеству строк и вообще я хочу написать очень длинный комментарий, чтобы сотрудник задумался о том, как коротка и хрупка наша жизнь.',
+            author: 'Самый главный анархист',
+            postdate: '2024-01-22',
+          },
+          {
+            id: '3',
+            content: 'Длинный комментарий без ограничения по количеству строк',
+            author: 'Иванов Иван Иванович',
+            postdate: '2024-01-22',
+          },
+          {
+            id: '4',
+            content:
+              'Длинный комментарий без ограничения по количеству строк и вообще я хочу написать очень длинный комментарий, чтобы сотрудник задумался о том, как коротка и хрупка наша жизнь.',
+            author: 'Самый главный анархист',
             postdate: '2024-01-22',
           },
         ],
@@ -92,11 +115,20 @@ export const IDPcardsData = [
         deadline: '2024-02-22',
         description: 'Почисти зубы и умойся',
         status: 'inWork',
-        linkURL: 'string',
+        linkURL:
+          'https://www.youtube.com/watch?v=cP97KKCq4eg&list=PLiZoB8JBsdzlG1oAY8U4vrBtVW07j6jil&index=19',
         comments: [
           {
             id: '1',
-            content: 'Комментарий 2',
+            content: 'Длинный комментарий без ограничения по количеству строк',
+            author: 'Иванов Иван Иванович',
+            postdate: '2024-01-22',
+          },
+          {
+            id: '2',
+            content:
+              'Длинный комментарий без ограничения по количеству строк и вообще я хочу написать очень длинный комментарий, чтобы сотрудник задумался о том, как коротка и хрупка наша жизнь.',
+            author: 'Самый главный анархист',
             postdate: '2024-01-22',
           },
         ],
@@ -107,7 +139,7 @@ export const IDPcardsData = [
         deadline: '2024-03-22',
         description: 'Горячее, с пенкой, кофе :)',
         status: 'noCompleted',
-        linkURL: 'string',
+        linkURL: 'https://www.youtube.com/watch?v=uSwe-5dPrV8&t=248s',
         comments: [],
       },
     ],
