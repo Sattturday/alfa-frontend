@@ -1,23 +1,32 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@alfalab/core-components/button";
 import { Input } from "@alfalab/core-components/input";
 import { Textarea } from "@alfalab/core-components/textarea";
 import { UniversalDateInput } from "@alfalab/core-components/universal-date-input";
-import ProgressBar from "../ProgressBar/ProgressBar";
 
+import ProgressBar from "../ProgressBar/ProgressBar";
 import ConfirmPopup from "../ConfirmPopup/ConfirmPopup";
 import Helper from "../Helper/Helper";
-
+import { closeConfirmPopup, toggleClickButtonOk } from "../../store/modalSlice";
 import styles from "./IPRCard.module.scss";
 
-function IPRCard({ onClickCancel, showPopup, onClickOk, onShowPopup, title }) {
+function IPRCard({ title }) {
   const [dataValue, setDataValue] = useState("");
   const [titleValue, setTitleValue] = useState("");
   const [descriptionValue, setDescriptionValue] = useState("");
+  const { dataInfo } = useSelector((state) => state.modal);
 
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { pathname } = useLocation();
+
+  const handleClickOk = () => {
+    dispatch(toggleClickButtonOk());
+    dispatch(closeConfirmPopup());
+    navigate(-1);
+  };
 
   const handleChangeDataInput = (_, { value }) => {
     setDataValue(value);
@@ -72,67 +81,58 @@ function IPRCard({ onClickCancel, showPopup, onClickOk, onShowPopup, title }) {
               }}
             />
           </form>
-          {pathname === '/create-ipr' ? <Helper
-            title="Принципы заполнения ИПР"
-            advices={["заполнить все поля", "создать хотя бы одну задачу"]}
-          /> : <ProgressBar />}
+          {pathname === "/create-ipr" ? (
+            <Helper
+              title="Принципы заполнения ИПР"
+              advices={["заполнить все поля", "создать хотя бы одну задачу"]}
+            />
+          ) : (
+            <ProgressBar />
+          )}
         </div>
-        {pathname === '/create-ipr' 
-        ? <Button
-          type="submit"
-          form="ipr-form"
-          className={styles.button}
-          view="accent"
-          name="create"
-          disabled
-        >
-          Создать
-        </Button>
-        :
-        <div style={{width: 382, justifyContent: 'space-between', display: 'flex'}}>
+        {pathname === "/create-ipr" ? (
           <Button
-          view="primary"
-          size="m"
-          name="save-changes"
-          className={styles.button_save}
+            type="submit"
+            form="ipr-form"
+            className={styles.button}
+            view="accent"
+            name="create"
+            disabled
           >
-            Сохранить изменения
+            Создать
           </Button>
-          <Button
-          type="button"
-          view="tertiary"
-          size="m"
-          name="cancel"
-          className={styles.button_cancel}
-          onClick={onShowPopup}
+        ) : (
+          <div
+            style={{
+              width: 382,
+              justifyContent: "space-between",
+              display: "flex",
+            }}
           >
-            Отменить
-          </Button>
-        </div>
-        }
-        
+            <Button
+              view="primary"
+              size="m"
+              name="save-changes"
+              className={styles.button_save}
+            >
+              Сохранить изменения
+            </Button>
+            <Button
+              type="button"
+              view="tertiary"
+              size="m"
+              name="cancel"
+              className={styles.button_cancel}
+              onClick={() => dispatch(closeConfirmPopup())}
+            >
+              Отменить
+            </Button>
+          </div>
+        )}
       </article>
-      {pathname === '/create-ipr' 
-      ? <ConfirmPopup
-        showPopup={showPopup}
-        onClickCancel={onClickCancel}
-        onClickOk={onClickOk}
-        title="Вы уверены, что хотите прекратить создание ИПР?"
-        description="Введённые вами данные не сохранятся."
-        leftButtonText="Отменить"
-        rightButtonText="Ок"
-      />
-      : <ConfirmPopup
-      showPopup={showPopup}
-      onClickCancel={onClickCancel}
-      onClickOk={onClickOk}
-      title="Вы уверены, что хотите прекратить редактирование?"
-      description="Введённые вами данные не сохранятся."
-      leftButtonText="Отменить"
-      rightButtonText="Ок"
-    />
-      }
-      
+      {dataInfo.title === "Вы уверены, что хотите прекратить создание ИПР?" && (
+        <ConfirmPopup onClickOk={handleClickOk} />
+      )}
     </>
   );
 }

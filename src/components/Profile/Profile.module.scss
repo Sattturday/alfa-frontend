@@ -8,7 +8,7 @@
   width: 100%;
   padding-bottom: 32px;
 
-  img {
+  /* img {
     width: 72px;
     height: 72px;
     border-radius: 50%;
@@ -27,7 +27,7 @@
     p {
       @include text1($color: $main-black-secondary-2);
     }
-  }
+  } */
 
   .buttonField {
     display: flex;

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 import Profile from "../../components/Profile/Profile";
 import AboutPlan from "../../components/AboutPlan/AboutPlan";
@@ -7,28 +8,30 @@ import TaskListTitle from "../../components/TaskListTitle/TaskListTitle";
 import { IDPcardsData } from "../../utils/data";
 import ShowList from "../../components/ShowList/ShowList";
 import IPRCard from "../../components/IPRCard/IPRCard";
+import ConfirmPopup from "../../components/ConfirmPopup/ConfirmPopup";
 
 function Management() {
   const [isOpenAboutPlan, setIsOpenAboutPlan] = useState(true);
-  const [showPopup, setShowPopup] = useState(false); //дубляж IPRCard
 
-  const handleShowPopup = () => {  //дубляж IPRCard
-    setShowPopup(true);
+  const { isActive, dataInfo } = useSelector((state) => state.modal);
+
+  const handleCompleteIPR = () => {
+    console.log("complete");
+  };
+
+  const handleDeleteIPR = () => {
+    console.log("delete");
   };
 
   const toggleEditIPR = () => {
     setIsOpenAboutPlan(!isOpenAboutPlan);
   };
 
-  const handleConfirmCancel = () => { //дубляж IPRCard
-    setShowPopup(false);
-  };
-
   return (
     <main>
       <BackLink
         text="Назад"
-        onShowPopup={handleShowPopup}
+        type={!isOpenAboutPlan && "create-ipr"}
         link={isOpenAboutPlan ? "/" : toggleEditIPR}
       />
       <Profile isOpenAboutPlan={isOpenAboutPlan} />
@@ -38,16 +41,21 @@ function Management() {
           <TaskListTitle />
         </>
       ) : (
-        <IPRCard
-          onClickOk={toggleEditIPR}
-          showPopup={showPopup}
-          onClickCancel={handleConfirmCancel}
-          onShowPopup={handleShowPopup}
-          title="Редактирование ИПР"
-        />
+        <IPRCard title="Редактирование ИПР" />
       )}
 
       <ShowList type="Task" cards={IDPcardsData} />
+      {isActive === "cancel" ? (
+        <ConfirmPopup onClickOk={toggleEditIPR} />
+      ) : (
+        <ConfirmPopup
+          onClickOk={
+            dataInfo.title === "Вы уверены, что хотите завершить ИПР?"
+              ? handleCompleteIPR
+              : handleDeleteIPR
+          }
+        />
+      )}
     </main>
   );
 }

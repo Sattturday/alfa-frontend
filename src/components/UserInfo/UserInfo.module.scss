@@ -1,0 +1,44 @@
+@import '../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/placeholders.scss';
+
+.img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 24px;
+  gap: 12px;
+
+  h1 {
+    @include section-title;
+  }
+
+  p {
+    @include text1($color: $main-black-secondary-2);
+  }
+}
+
+.img_s {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.info_s {
+  display: flex;
+  flex-direction: column;
+  margin-left: 4px;
+  gap: 4px;
+
+  h1 {
+    @include text1;
+  }
+
+  p {
+    @include text1($color: $main-black-secondary-2, $font-weight: $fw-regular);
+  }
+}
