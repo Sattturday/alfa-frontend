@@ -19,10 +19,11 @@
       @include list;
     }
   }
+}
 
-  .text{
-    @include text($color: $main-black-secondary-2, $line-height: 1.25);
-  }
+.text {
+  @include text($color: $main-black-secondary-2, $line-height: 1.25);
+  @extend %font-prim;
 }
 
 .advices {
