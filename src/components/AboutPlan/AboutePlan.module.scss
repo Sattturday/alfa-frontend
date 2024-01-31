@@ -8,6 +8,10 @@
   border-radius: 30px;
   @include border;
 
+  .textCancel {
+    color: $main-white-secondary-3!important;
+  }
+
   .top {
     display: flex;
     gap: 35px;
