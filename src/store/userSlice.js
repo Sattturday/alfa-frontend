@@ -1,9 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const userSlice = createSlice({
-  name: "user",
+  name: 'user',
   initialState: {
-    iprStatus: "cancel", //active-обычное состояние ИПР, cancel-отменена, no-отстутствует
+    iprStatus: 'active', //active-обычное состояние ИПР, cancel-отменена, no-отстутствует
   },
   reducers: {
     changeStatusIpr(state, action) {

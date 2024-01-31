@@ -1,14 +1,15 @@
-import { useLocation } from "react-router-dom";
-import FriendlyPic from "../../assets/img/friendly-pic.png";
-import styles from "./Helper.module.scss";
+import FriendlyPic from '../../assets/img/friendly-pic.png';
+import styles from './Helper.module.scss';
 
-function Helper({ title, advices, type = "list" }) {
-  const { pathname } = useLocation();
+// 2 варианта отображения подскаски - с маркированным списком и с параграфом
+// соответственно type = list и type = paragraph
+// по умолчанию type = paragraph
+function Helper({ title, advices, type = 'paragraph' }) {
   return (
     <section className={`${styles.helper} ${styles[type]}`}>
-      <img src={FriendlyPic} alt="Смайл" />
+      <img src={FriendlyPic} alt='Смайл' />
       <h3 className={styles.title}>{title}</h3>
-      {pathname === "/" || "/employee"? (
+      {type === 'paragraph' ? (
         <p className={styles.text}>{advices}</p>
       ) : (
         <ul className={styles.advices}>

@@ -1,32 +1,34 @@
-import React, { useState, useEffect } from "react";
-import styles from "./SelectStatus.module.scss";
-import "../../styles/abstract/constants.scss";
-import yellowColorArrow from "../../assets/img/select-arrow-yellow.svg";
-import redColorArrow from "../../assets/img/select-arrow-red.svg";
-import greenColorArrow from "../../assets/img/select-arrow-green.svg";
+import React, { useState, useEffect } from 'react';
+
+import yellowColorArrow from '../../assets/img/select-arrow-yellow.svg';
+import redColorArrow from '../../assets/img/select-arrow-red.svg';
+import greenColorArrow from '../../assets/img/select-arrow-green.svg';
+import '../../styles/abstract/constants.scss';
+
+import styles from './SelectStatus.module.scss';
 
 function SelectStatus({ task }) {
-  const [value, setValue] = useState("");
-  const [inputValue, setInputValue] = useState("");
+  const [value, setValue] = useState('');
+  const [inputValue, setInputValue] = useState('');
   const [isOpenList, setIsOpenList] = useState(false);
   const [buttonStyle, setButtonStyle] = useState({});
 
   const rebButton = {
-    border: "1px solid #ef3124",
+    border: '1px solid #ef3124',
     backgroundImage: `url(${redColorArrow})`,
-    color: "#ef3124",
+    color: '#ef3124',
   };
 
   const greenButton = {
-    border: "1px solid #0cc44d",
+    border: '1px solid #0cc44d',
     backgroundImage: `url(${greenColorArrow})`,
-    color: "#0cc44d",
+    color: '#0cc44d',
   };
 
   const yellowButton = {
-    border: "1px solid #fa9313",
+    border: '1px solid #fa9313',
     backgroundImage: `url(${yellowColorArrow})`,
-    color: "#fa9313",
+    color: '#fa9313',
   };
 
   const showList = () => {
@@ -38,43 +40,43 @@ function SelectStatus({ task }) {
   };
 
   const changeButton = (e) => {
-    if (e.currentTarget.id === "done") {
+    if (e.currentTarget.id === 'done') {
       setInputValue(e.currentTarget.id);
       setButtonStyle(greenButton);
-      setValue("Выполнено");
+      setValue('Выполнено');
     }
-    if (e.currentTarget.id === "inWork") {
+    if (e.currentTarget.id === 'inWork') {
       setInputValue(e.currentTarget.id);
       setButtonStyle(yellowButton);
-      setValue("В работе");
+      setValue('В работе');
     }
-    if (e.currentTarget.id === "noCompleted") {
+    if (e.currentTarget.id === 'noCompleted') {
       setInputValue(e.currentTarget.id);
       setButtonStyle(rebButton);
-      setValue("Ожидание");
+      setValue('Ожидание');
     }
     hideList();
   };
 
   useEffect(() => {
-    if (task.status === "done") {
+    if (task.status === 'done') {
       setButtonStyle(greenButton);
-      setValue("Выполнено");
-    } else if (task.status === "inWork") {
+      setValue('Выполнено');
+    } else if (task.status === 'inWork') {
       setButtonStyle(yellowButton);
-      setValue("В работе");
-    } else if (task.status === "noCompleted") {
+      setValue('В работе');
+    } else if (task.status === 'noCompleted') {
       setButtonStyle(rebButton);
-      setValue("Ожидание");
+      setValue('Ожидание');
     }
   }, []);
 
   return (
     <div className={styles.card__block}>
       <p>{`До ${task.deadline}`}</p>
-      <div className={styles.dropdown} id="status">
+      <div className={styles.dropdown} id='status'>
         <button
-          name="status"
+          name='status'
           className={`${styles.dropdown__button}`}
           style={buttonStyle}
           onClick={showList}
@@ -90,25 +92,25 @@ function SelectStatus({ task }) {
         >
           <li
             onClick={changeButton}
-            className="dropdown__list-item"
-            id="noCompleted"
+            className='dropdown__list-item'
+            id='noCompleted'
           >
             Ожидание
           </li>
           <li
             onClick={changeButton}
-            className="dropdown__list-item"
-            id="inWork"
+            className='dropdown__list-item'
+            id='inWork'
           >
             В работе
           </li>
-          <li onClick={changeButton} className="dropdown__list-item" id="done">
+          <li onClick={changeButton} className='dropdown__list-item' id='done'>
             Выполнено
           </li>
         </ul>
         <input
-          type="text"
-          name="select-input"
+          type='text'
+          name='select-input'
           value={inputValue}
           className={styles.dropdown__input}
         ></input>

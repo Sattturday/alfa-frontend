@@ -1,29 +1,31 @@
-import React from "react";
-import styles from "./TaskCard.module.scss";
-import "../../styles/abstract/constants.scss";
-import CommentIconEmpty from "../../assets/img/icon_comment_empty.svg";
-import CommentIconFull from "../../assets/img/icon_comment_full.svg";
-import SelectStatus from "../SelectStatus/SelectStatus";
+import React from 'react';
+import styles from './TaskCard.module.scss';
+import '../../styles/abstract/constants.scss';
+import CommentIconEmpty from '../../assets/img/icon_comment_empty.svg';
+import CommentIconFull from '../../assets/img/icon_comment_full.svg';
+import SelectStatus from '../SelectStatus/SelectStatus';
 
 function TaskCard({ card }) {
-  return card.tasks.map((task) => {
-    return (
-      <article key={task.id} className={styles.card} id={card.employeeId["id"]}>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div className={styles.card__container}>
-            <h3>{task.title}</h3>
-            <img
-              alt="Кнопка комментариев"
-              src={task.comments.length ? CommentIconFull : CommentIconEmpty}
-              className={styles.icon_comment}
-            />
-          </div>
-          <p className={styles.card__description}>{task.description}</p>
+  const handleCardClick = () => {
+    console.log(card);
+  };
+
+  return (
+    <article className={styles.card} id={card.id} onClick={handleCardClick}>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div className={styles.card__container}>
+          <h3>{card.title}</h3>
+          <img
+            alt='Кнопка комментариев'
+            src={card.comments.length ? CommentIconFull : CommentIconEmpty}
+            className={styles.icon_comment}
+          />
         </div>
-        <SelectStatus key={task.id} task={task} />
-      </article>
-    );
-  });
+        <p className={styles.card__description}>{card.description}</p>
+      </div>
+      <SelectStatus task={card} />
+    </article>
+  );
 }
 
 export default TaskCard;
