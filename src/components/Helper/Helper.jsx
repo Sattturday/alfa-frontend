@@ -2,13 +2,13 @@ import { useLocation } from "react-router-dom";
 import FriendlyPic from "../../assets/img/friendly-pic.png";
 import styles from "./Helper.module.scss";
 
-const Helper = ({ title, advices, type = "list" }) => {
+function Helper({ title, advices, type = "list" }) {
   const { pathname } = useLocation();
   return (
     <section className={`${styles.helper} ${styles[type]}`}>
       <img src={FriendlyPic} alt="Смайл" />
       <h3 className={styles.title}>{title}</h3>
-      {pathname === "/" ? (
+      {pathname === "/" || "/employee"? (
         <p className={styles.text}>{advices}</p>
       ) : (
         <ul className={styles.advices}>
@@ -21,6 +21,6 @@ const Helper = ({ title, advices, type = "list" }) => {
       )}
     </section>
   );
-};
+}
 
 export default Helper;

@@ -16,7 +16,7 @@ const Login = ({
   isLoggedLeader = false,
 }) => {
   const navigate = useNavigate();
-  const { values, resetForm, handleChange, errors, setErrors, isValid } =
+  const { values, resetForm, handleChange, errors, setErrors, isValid, setIsValid } =
     useForm();
   const [isFormDisabled, setIsFormDisabled] = React.useState(false);
 
