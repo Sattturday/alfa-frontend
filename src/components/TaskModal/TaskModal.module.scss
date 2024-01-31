@@ -2,13 +2,17 @@
 @import '../../styles/abstract/mixins.scss';
 @import '../../styles/abstract/placeholders.scss';
 
+.panel {
+  padding-right: 80px;
+  width: 632px !important;
+}
+
 .navigation {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 24px;
-  border-bottom: 1px solid $main-white-secondary-3;
 }
 
 .wrapper {
@@ -16,6 +20,7 @@
   display: flex;
   gap: 32px;
   align-self: flex-start;
+  border-bottom: 1px solid $main-white-secondary-3;
 }
 
 .nav_button {

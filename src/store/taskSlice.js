@@ -4,8 +4,8 @@ const taskSlice = createSlice({
   name: 'task',
   initialState: {
     isOpenTaskModal: false,
-    isActive: 'task',
     isSaveSample: false,
+    isActive: 'task',
     dirSample: {},
   },
   reducers: {

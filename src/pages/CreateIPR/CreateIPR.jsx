@@ -41,7 +41,7 @@ function CreateIPR() {
         onClickOk={handleClickOk}
         title='Создание ИПР'
       />
-      <ShowList type='Task' cards={IDPcardsData} />
+      <ShowList type='Task' />
     </main>
   );
 }

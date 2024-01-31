@@ -28,6 +28,7 @@ const TaskModal = () => {
   return (
     <>
       <SidePanel
+        className={styles.panel}
         key={'getKey()'}
         open={isOpenTaskModal}
         onClose={handleClose}
