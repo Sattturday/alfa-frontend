@@ -30,6 +30,21 @@
     z-index: 5;
   }
 
+  .popup_container_l {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    width: 600px;
+    height: 364px;
+    padding: 40px 44px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    background-color: $main-white-1;
+    border-radius: 12px;
+    z-index: 5;
+  }
+
   .title {
     @include text($font-size: 32px, $font-weight: $fw-bold, $line-height: 40px);
     white-space: wrap;
@@ -54,6 +69,13 @@
   width: 237px;
 }
 
+.button_container_l {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 298px;
+}
+
 .button_cancel {
   width: 137px;
   height: 56px;
@@ -64,4 +86,23 @@
   height: 56px;
   border-radius: 12px;
   font-size: 16px;
+}
+
+.button_confirm_l {
+  width: 149px;
+  height: 56px;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.user_wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-top: 16px;
+}
+
+.name_IPR {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  @include text($font-weight: $fw-bold, $font-size: 20px, $line-height: 24px);
 }
