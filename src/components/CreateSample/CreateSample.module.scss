@@ -1,0 +1,26 @@
+@import '../../styles/abstract/placeholders.scss';
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/mixins.scss';
+
+.create_sample {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.samples {
+  width: 248px;
+}
+
+.option {
+  @include text($line-height: 1.25);
+  @extend %font-prim;
+}
+
+.button {
+  margin-top: 12px;
+  width: 192px;
+
+  //color: $main-white-secondary-3;
+}
