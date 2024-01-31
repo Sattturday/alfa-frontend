@@ -237,7 +237,7 @@ export const IDPcardsData = [
     ],
   },
   {
-    id: '11',
+    id: '6',
     employeeId: '116',
     employeeName: 'Иванова Иштар Ивановна',
     employeeJob: 'Developer',
@@ -268,7 +268,7 @@ export const IDPcardsData = [
     ],
   },
   {
-    id: '11',
+    id: '7',
     employeeId: '117',
     employeeName: 'Иванов Иван Иванович',
     employeeJob: 'Developer',
@@ -299,7 +299,7 @@ export const IDPcardsData = [
     ],
   },
   {
-    id: '11',
+    id: '8',
     employeeId: '118',
     employeeName: 'Иванов Иван Иванович',
     employeeJob: 'Developer',
