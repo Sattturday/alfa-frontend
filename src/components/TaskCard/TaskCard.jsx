@@ -1,13 +1,22 @@
 import React from 'react';
-import styles from './TaskCard.module.scss';
-import '../../styles/abstract/constants.scss';
+import { useDispatch } from 'react-redux';
+
+import { openTaskModal, setTask } from '../../store/taskSlice';
 import CommentIconEmpty from '../../assets/img/icon_comment_empty.svg';
 import CommentIconFull from '../../assets/img/icon_comment_full.svg';
 import SelectStatus from '../SelectStatus/SelectStatus';
+import '../../styles/abstract/constants.scss';
+
+import styles from './TaskCard.module.scss';
 
 function TaskCard({ card }) {
-  const handleCardClick = () => {
-    console.log(card);
+  const dispatch = useDispatch();
+
+  const handleCardClick = (e) => {
+    if (e.target === e.currentTarget) {
+      dispatch(setTask(card));
+      dispatch(openTaskModal('aboutTask'));
+    }
   };
 
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { openTaskModal } from '../../store/taskSlice';
@@ -13,7 +13,7 @@ function AddTaskButton({ isActive = false }) {
       type='button'
       className={styles.button}
       disabled={!isActiveButton}
-      onClick={() => dispatch(openTaskModal())}
+      onClick={() => dispatch(openTaskModal('createTask'))}
     >
       <span
         className={

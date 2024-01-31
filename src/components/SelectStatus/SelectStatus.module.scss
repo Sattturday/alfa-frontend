@@ -1,10 +1,11 @@
-@import "../../styles/abstract/mixins.scss";
-@import "../../styles/abstract/constants.scss";
+@import '../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/constants.scss';
 
 .card__block {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
   p {
     @include text1-date;
     align-self: flex-end;
@@ -44,7 +45,7 @@
   width: 150px;
   border-radius: 8px;
   border: 1px solid $main-white-secondary-2;
-  
+
   z-index: 3;
 
   li {
@@ -68,7 +69,7 @@
     }
 
     &:hover {
-      background-color: $main-white-2
+      background-color: $main-white-2;
     }
   }
 }

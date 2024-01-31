@@ -1,0 +1,50 @@
+@import '../../styles/abstract/placeholders.scss';
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/mixins.scss';
+
+.comments {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  @extend %font-prim;
+}
+
+.title {
+  @include section-title;
+  padding-bottom: 36px;
+}
+
+.list {
+  @include list;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item {
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 1px 20px 20px 20px;
+  background: $accent-light-blue;
+
+  &.boss {
+    background: $main-white-2;
+  }
+}
+
+.wrap {
+  @include text1-date($main-black-secondary-1);
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  @include text($line-height: 1.25);
+}
+
+.input {
+  margin-top: 60px;
+}

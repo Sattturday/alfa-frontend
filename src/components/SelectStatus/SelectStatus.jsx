@@ -113,6 +113,7 @@ function SelectStatus({ task }) {
           name='select-input'
           value={inputValue}
           className={styles.dropdown__input}
+          onChange={(e) => setInputValue(e.target.value)}
         ></input>
       </div>
       <div
