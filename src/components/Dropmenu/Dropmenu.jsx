@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { useClickOutside } from "../../hooks/useClickOutside";
 import { actionButtons } from "../../utils/data";
@@ -10,17 +10,12 @@ import {
 } from "../../store/modalSlice";
 
 import styles from "./Dropmenu.module.scss";
-import ConfirmPopup from "../ConfirmPopup/ConfirmPopup";
 
 const Dropmenu = () => {
   const [isActivate, setIsActivate] = useState(false);
   const [ordering, setOrdering] = useState(false);
   const actionRef = useRef(null);
   const dispatch = useDispatch();
-
-  const { isActive } = useSelector((state) => state.modal);
-
-  console.log(isActive);
 
   // Использование кастомного хука, который определяет клик вне определенной области
   useClickOutside(actionRef, () => {
@@ -107,9 +102,6 @@ const Dropmenu = () => {
           );
         })}
       </ul>
-      {(isActive === "complete" && <ConfirmPopup />) ||
-        (isActive === "cancel-card" && <ConfirmPopup />) ||
-        (isActive === "delete" && <ConfirmPopup />)}
     </div>
   );
 };
