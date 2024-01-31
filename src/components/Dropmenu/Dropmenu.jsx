@@ -1,43 +1,92 @@
-import { useRef, useState } from 'react';
+import { useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import { useClickOutside } from '../../hooks/useClickOutside';
-import { actionButtons } from '../../utils/data';
+import { useClickOutside } from "../../hooks/useClickOutside";
+import { actionButtons } from "../../utils/data";
+import {
+  openConfirmPopup,
+  setDataInfo,
+  setIsActive,
+} from "../../store/modalSlice";
 
-import styles from './Dropmenu.module.scss';
+import styles from "./Dropmenu.module.scss";
+import ConfirmPopup from "../ConfirmPopup/ConfirmPopup";
 
 const Dropmenu = () => {
-  const [isActive, setIsActive] = useState(false);
+  const [isActivate, setIsActivate] = useState(false);
   const [ordering, setOrdering] = useState(false);
   const actionRef = useRef(null);
+  const dispatch = useDispatch();
+
+  const { isActive } = useSelector((state) => state.modal);
+
+  console.log(isActive);
 
   // Использование кастомного хука, который определяет клик вне определенной области
   useClickOutside(actionRef, () => {
-    if (isActive) setTimeout(() => setIsActive(false), 200);
+    if (isActivate) setTimeout(() => setIsActivate(false), 200);
   });
 
   // Обработчик клика для открытия/закрытия панели сортировки
   const onClickNavTab = () => {
-    setIsActive(!isActive);
+    setIsActivate(!isActivate);
   };
 
   // Обработчик сортировки при выборе опции сортировки
   const onClickActionHandler = (e) => {
-    setOrdering(e.target.id);
-    console.log(e.target.id);
+    if (e.target.id === "complete") {
+      dispatch(setIsActive("complete"));
+      dispatch(
+        setDataInfo({
+          title: "Вы уверены, что хотите завершить ИПР?",
+          leftButtonText: "Отменить",
+          rightButtonText: "Завершить",
+        })
+      );
+      setOrdering(e.target.id);
+      console.log(e.target.id);
+      dispatch(openConfirmPopup());
+    }
+    if (e.target.id === "cancel") {
+      dispatch(setIsActive("cancel-card"));
+      dispatch(
+        setDataInfo({
+          title: "Вы уверены, что хотите отменить ИПР?",
+          leftButtonText: "Отменить",
+          rightButtonText: "Ок",
+        })
+      );
+      setOrdering(e.target.id);
+      console.log(e.target.id);
+      dispatch(openConfirmPopup());
+    }
+    if (e.target.id === "delete") {
+      dispatch(setIsActive("delete"));
+      dispatch(
+        setDataInfo({
+          title: "Вы уверены, что хотите удалить ИПР?",
+          leftButtonText: "Отменить",
+          rightButtonText: "Удалить",
+        })
+      );
+      setOrdering(e.target.id);
+      console.log(e.target.id);
+      dispatch(openConfirmPopup());
+    }
     onClickNavTab();
   };
 
   return (
     <div
-      className={`${styles.dropmenu} ${isActive ? styles.active : ''}`}
+      className={`${styles.dropmenu} ${isActivate ? styles.active : ""}`}
       ref={actionRef}
     >
       <button
-        className={`${styles.button} ${isActive ? styles.active : ''}`}
+        className={`${styles.button} ${isActivate ? styles.active : ""}`}
         onClick={onClickNavTab}
       />
       {/* Список опций сортировки */}
-      <ul className={`${styles.list} ${isActive ? styles.active : ''}`}>
+      <ul className={`${styles.list} ${isActivate ? styles.active : ""}`}>
         {/* Перебор sortButtons для отображения отдельных опций сортировки */}
         {actionButtons.map((button) => {
           return (
@@ -47,20 +96,20 @@ const Dropmenu = () => {
                 <input
                   id={button.id}
                   className={styles.radio}
-                  type='radio'
+                  type="radio"
                   name={button.id}
                   checked={ordering === button.id}
                   onChange={onClickActionHandler}
                 />
                 <span>{button.title}</span>
               </label>
-              
             </li>
           );
         })}
-        
       </ul>
-
+      {(isActive === "complete" && <ConfirmPopup />) ||
+        (isActive === "cancel-card" && <ConfirmPopup />) ||
+        (isActive === "delete" && <ConfirmPopup />)}
     </div>
   );
 };
