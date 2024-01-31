@@ -33,6 +33,7 @@ const CreateTask = ({ handleClose, handleChange }) => {
           <Helper
             title='Чтобы создать шаблон'
             advices={['выберите направление']}
+            type='list'
           />
           <SelectDesktop
             className={styles.samples}
@@ -50,7 +51,11 @@ const CreateTask = ({ handleClose, handleChange }) => {
           />
         </>
       )}
-      <Helper title='Чтобы создать задачу' advices={['введите название']} />
+      <Helper
+        title='Чтобы создать задачу'
+        advices={['введите название']}
+        type='list'
+      />
       <TaskForm />
       <Button
         className={styles.button}

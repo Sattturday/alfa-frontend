@@ -10,28 +10,22 @@ function TaskCard({ card }) {
     console.log(card);
   };
 
-  return card.tasks.map((task) => {
-    return (
-      <article
-        className={styles.card}
-        id={card.employeeId['id']}
-        onClick={handleCardClick}
-      >
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <div className={styles.card__container}>
-            <h3>{task.title}</h3>
-            <img
-              alt='Кнопка комментариев'
-              src={task.comments.length ? CommentIconFull : CommentIconEmpty}
-              className={styles.icon_comment}
-            />
-          </div>
-          <p className={styles.card__description}>{task.description}</p>
+  return (
+    <article className={styles.card} id={card.id} onClick={handleCardClick}>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div className={styles.card__container}>
+          <h3>{card.title}</h3>
+          <img
+            alt='Кнопка комментариев'
+            src={card.comments.length ? CommentIconFull : CommentIconEmpty}
+            className={styles.icon_comment}
+          />
         </div>
-        <SelectStatus key={task.id} task={task} />
-      </article>
-    );
-  });
+        <p className={styles.card__description}>{card.description}</p>
+      </div>
+      <SelectStatus task={card} />
+    </article>
+  );
 }
 
 export default TaskCard;

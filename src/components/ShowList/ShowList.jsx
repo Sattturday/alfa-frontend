@@ -8,19 +8,17 @@ import styles from './ShowList.module.scss';
 
 const ShowList = ({ type = 'IDP', cards }) => {
   const { pathname } = useLocation();
+
   return (
     <ul className={styles.list}>
       {(pathname === '/management' || pathname === '/create-ipr') && (
         <AddTaskButton isActive={true} />
       )}
       {cards?.map((card) => {
-        const user = card.employeeId === card.id;
         return type === 'IDP' ? (
           <IDPCard key={card.id} data={card} />
-        ) : user ? (
-          <TaskCard key={card.employeeId} card={card} />
         ) : (
-          ''
+          <TaskCard key={card.id} card={card} />
         );
       })}
     </ul>
