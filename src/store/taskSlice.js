@@ -5,18 +5,24 @@ const taskSlice = createSlice({
   initialState: {
     isOpenTaskModal: false,
     isSaveSample: false,
-    isActive: 'task',
+    typeTaskModal: '',
+    isNavItemActive: 'primary',
     dirSample: {},
   },
   reducers: {
     openTaskModal(state) {
       state.isOpenTaskModal = true;
+      state.isNavItemActive = 'primary';
     },
     closeTaskModal(state) {
       state.isOpenTaskModal = false;
+      state.isNavItemActive = '';
     },
-    setIsActive(state, action) {
-      state.isActive = action.payload;
+    setTypeTaskModal(state, action) {
+      state.typeTaskModal = action.payload;
+    },
+    setIsNavItemActive(state, action) {
+      state.isNavItemActive = action.payload;
     },
     setDirSample(state, action) {
       state.dirSample = action.payload;
@@ -34,7 +40,8 @@ const taskSlice = createSlice({
 export const {
   openTaskModal,
   closeTaskModal,
-  setIsActive,
+  setTypeTaskModal,
+  setIsNavItemActive,
   setDirSample,
   onSaveSample,
   offSaveSample,
