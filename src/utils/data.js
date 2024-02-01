@@ -62,12 +62,15 @@ export const IDPcardsData = [
     employeeId: '1',
     employeeName: 'Иванов Иван Иванович',
     employeeJob: 'Designer',
+    title: 'Название ИПР',
     goal: 'Повышение скиллов',
+    description:
+      'Ты мощь, ты сила, уважаю, ты красавчик. Однаждый в студеную зимнюю пору я из лесу вышел, был сильный мороз.Ты мощь, ты сила, уважаю, ты красавчик. Однаждый в студеную зимную пору я из лесу вышел, был сильный мороз.',
     deadline: '2024-01-22',
-    status: 'Created',
+    status: 'InWork',
     deadlineFlag: false,
     messageFlag: false,
-    progress: 0,
+    progress: 33,
     avatar:
       'https://images.unsplash.com/photo-1668342482782-582a821eaa59?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     tasks: [
@@ -149,26 +152,52 @@ export const IDPcardsData = [
     employeeId: '112',
     employeeName: 'Иванов Иван Иванович',
     employeeJob: 'Developer',
+    title: 'Не считай дни, извлекай из них пользу.',
     goal: 'Базовое програмирование',
+    description:
+      'Ты мощь, ты сила, уважаю, ты красавчик. Однаждый в студеную зимнюю пору я из лесу вышел, был сильный мороз.Ты мощь, ты сила, уважаю, ты красавчик. Однаждый в студеную зимную пору я из лесу вышел, был сильный мороз.',
     deadline: '2024-01-22',
     messageFlag: false,
     status: 'InWork',
-    progress: 20,
+    progress: 0,
     deadlineFlag: false,
     avatar:
       'https://images.unsplash.com/photo-1702913182391-cb0783cbfaf8?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     tasks: [
       {
-        id: 'string',
-        title: 'string',
+        id: '1',
+        title: 'Посмотреть видео',
         deadline: '2024-01-22',
-        description: 'string',
-        status: 'open',
-        linkURL: 'string',
+        description:
+          'Очень отличное видео, тебе точно понравится, не забудь попкорн.',
+        status: 'inWork',
+        linkURL:
+          'https://core-ds.github.io/core-components/master/?path=/docs/button--docs',
         comments: [
           {
-            id: 'string',
-            content: 'string',
+            id: '1',
+            content: 'Длинный комментарий без ограничения по количеству строк',
+            author: 'Иванов Иван Иванович',
+            postdate: '2024-01-22',
+          },
+          {
+            id: '2',
+            content:
+              'Длинный комментарий без ограничения по количеству строк и вообще я хочу написать очень длинный комментарий, чтобы сотрудник задумался о том, как коротка и хрупка наша жизнь.',
+            author: 'Самый главный анархист',
+            postdate: '2024-01-22',
+          },
+          {
+            id: '3',
+            content: 'Длинный комментарий без ограничения по количеству строк',
+            author: 'Иванов Иван Иванович',
+            postdate: '2024-01-22',
+          },
+          {
+            id: '4',
+            content:
+              'Длинный комментарий без ограничения по количеству строк и вообще я хочу написать очень длинный комментарий, чтобы сотрудник задумался о том, как коротка и хрупка наша жизнь.',
+            author: 'Самый главный анархист',
             postdate: '2024-01-22',
           },
         ],
@@ -180,7 +209,10 @@ export const IDPcardsData = [
     employeeId: '113',
     employeeName: 'Иванов Иван Иванович',
     employeeJob: 'Developer',
+    title: 'Один в поле не воин',
     goal: 'Работа в команде',
+    description:
+      'Ты мощь, ты сила, уважаю, ты красавчик. Однаждый в студеную зимнюю пору я из лесу вышел, был сильный мороз.Ты мощь, ты сила, уважаю, ты красавчик. Однаждый в студеную зимную пору я из лесу вышел, был сильный мороз.',
     deadline: '2024-01-22',
     messageFlag: true,
     status: 'Done',
@@ -190,16 +222,39 @@ export const IDPcardsData = [
       'https://images.unsplash.com/photo-1704570249452-c45247dd2b6e?q=80&w=1949&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     tasks: [
       {
-        id: 'string',
-        title: 'string',
+        id: '1',
+        title: 'Посмотреть видео',
         deadline: '2024-01-22',
-        description: 'string',
-        status: 'open',
-        linkURL: 'string',
+        description:
+          'Очень отличное видео, тебе точно понравится, не забудь попкорн.',
+        status: 'done',
+        linkURL:
+          'https://core-ds.github.io/core-components/master/?path=/docs/button--docs',
         comments: [
           {
-            id: 'string',
-            content: 'string',
+            id: '1',
+            content: 'Длинный комментарий без ограничения по количеству строк',
+            author: 'Иванов Иван Иванович',
+            postdate: '2024-01-22',
+          },
+          {
+            id: '2',
+            content:
+              'Длинный комментарий без ограничения по количеству строк и вообще я хочу написать очень длинный комментарий, чтобы сотрудник задумался о том, как коротка и хрупка наша жизнь.',
+            author: 'Самый главный анархист',
+            postdate: '2024-01-22',
+          },
+          {
+            id: '3',
+            content: 'Длинный комментарий без ограничения по количеству строк',
+            author: 'Иванов Иван Иванович',
+            postdate: '2024-01-22',
+          },
+          {
+            id: '4',
+            content:
+              'Длинный комментарий без ограничения по количеству строк и вообще я хочу написать очень длинный комментарий, чтобы сотрудник задумался о том, как коротка и хрупка наша жизнь.',
+            author: 'Самый главный анархист',
             postdate: '2024-01-22',
           },
         ],
@@ -211,7 +266,10 @@ export const IDPcardsData = [
     employeeId: '114',
     employeeName: 'Иванов Иван Иванович',
     employeeJob: 'Developer',
+    title: 'Не ждите. Время никогда не будет подходящим.',
     goal: 'Базовое програмирование',
+    description:
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem quam facilis quisquam consequuntur deleniti quas officia error tempore, modi cupiditate placeat sapiente ipsum consequatur velit dolores labore iste fugit.',
     deadline: '2024-01-22',
     messageFlag: true,
     status: 'Checked',
@@ -221,16 +279,39 @@ export const IDPcardsData = [
       'https://images.unsplash.com/photo-1704642407551-7c4c82f644b7?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     tasks: [
       {
-        id: 'string',
-        title: 'string',
+        id: '1',
+        title: 'Посмотреть видео',
         deadline: '2024-01-22',
-        description: 'string',
-        status: 'open',
-        linkURL: 'string',
+        description:
+          'Очень отличное видео, тебе точно понравится, не забудь попкорн.',
+        status: 'done',
+        linkURL:
+          'https://core-ds.github.io/core-components/master/?path=/docs/button--docs',
         comments: [
           {
-            id: 'string',
-            content: 'string',
+            id: '1',
+            content: 'Длинный комментарий без ограничения по количеству строк',
+            author: 'Иванов Иван Иванович',
+            postdate: '2024-01-22',
+          },
+          {
+            id: '2',
+            content:
+              'Длинный комментарий без ограничения по количеству строк и вообще я хочу написать очень длинный комментарий, чтобы сотрудник задумался о том, как коротка и хрупка наша жизнь.',
+            author: 'Самый главный анархист',
+            postdate: '2024-01-22',
+          },
+          {
+            id: '3',
+            content: 'Длинный комментарий без ограничения по количеству строк',
+            author: 'Иванов Иван Иванович',
+            postdate: '2024-01-22',
+          },
+          {
+            id: '4',
+            content:
+              'Длинный комментарий без ограничения по количеству строк и вообще я хочу написать очень длинный комментарий, чтобы сотрудник задумался о том, как коротка и хрупка наша жизнь.',
+            author: 'Самый главный анархист',
             postdate: '2024-01-22',
           },
         ],
@@ -242,26 +323,90 @@ export const IDPcardsData = [
     employeeId: '115',
     employeeName: 'Иванов Иван Иванович',
     employeeJob: 'Developer',
+    title: 'Мечтатели - это спасители мира.',
     goal: 'Адаптивная и кроссбраузерная верстка',
+    description:
+      'Индивидуальный план развития – часть системы управления персоналом. Представляет собой документ, в котором изложена стратегия развития компетенций и расширения сферы знаний сотрудника.',
     deadline: '2024-01-22',
     messageFlag: false,
     status: 'Canceled',
-    progress: 40,
+    progress: 50,
     deadlineFlag: false,
     avatar:
       'https://images.unsplash.com/photo-1702913182391-cb0783cbfaf8?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     tasks: [
       {
-        id: 'string',
-        title: 'string',
+        id: '1',
+        title: 'Посмотреть видео',
         deadline: '2024-01-22',
-        description: 'string',
-        status: 'open',
-        linkURL: 'string',
+        description:
+          'Очень отличное видео, тебе точно понравится, не забудь попкорн.',
+        status: 'done',
+        linkURL:
+          'https://core-ds.github.io/core-components/master/?path=/docs/button--docs',
         comments: [
           {
-            id: 'string',
-            content: 'string',
+            id: '1',
+            content: 'Длинный комментарий без ограничения по количеству строк',
+            author: 'Иванов Иван Иванович',
+            postdate: '2024-01-22',
+          },
+          {
+            id: '2',
+            content:
+              'Длинный комментарий без ограничения по количеству строк и вообще я хочу написать очень длинный комментарий, чтобы сотрудник задумался о том, как коротка и хрупка наша жизнь.',
+            author: 'Самый главный анархист',
+            postdate: '2024-01-22',
+          },
+          {
+            id: '3',
+            content: 'Длинный комментарий без ограничения по количеству строк',
+            author: 'Иванов Иван Иванович',
+            postdate: '2024-01-22',
+          },
+          {
+            id: '4',
+            content:
+              'Длинный комментарий без ограничения по количеству строк и вообще я хочу написать очень длинный комментарий, чтобы сотрудник задумался о том, как коротка и хрупка наша жизнь.',
+            author: 'Самый главный анархист',
+            postdate: '2024-01-22',
+          },
+        ],
+      },
+      {
+        id: '2',
+        title: 'Посмотреть видео',
+        deadline: '2024-01-22',
+        description:
+          'Очень отличное видео, тебе точно понравится, не забудь попкорн.',
+        status: 'inWork',
+        linkURL:
+          'https://core-ds.github.io/core-components/master/?path=/docs/button--docs',
+        comments: [
+          {
+            id: '1',
+            content: 'Длинный комментарий без ограничения по количеству строк',
+            author: 'Иванов Иван Иванович',
+            postdate: '2024-01-22',
+          },
+          {
+            id: '2',
+            content:
+              'Длинный комментарий без ограничения по количеству строк и вообще я хочу написать очень длинный комментарий, чтобы сотрудник задумался о том, как коротка и хрупка наша жизнь.',
+            author: 'Самый главный анархист',
+            postdate: '2024-01-22',
+          },
+          {
+            id: '3',
+            content: 'Длинный комментарий без ограничения по количеству строк',
+            author: 'Иванов Иван Иванович',
+            postdate: '2024-01-22',
+          },
+          {
+            id: '4',
+            content:
+              'Длинный комментарий без ограничения по количеству строк и вообще я хочу написать очень длинный комментарий, чтобы сотрудник задумался о том, как коротка и хрупка наша жизнь.',
+            author: 'Самый главный анархист',
             postdate: '2024-01-22',
           },
         ],
@@ -273,26 +418,63 @@ export const IDPcardsData = [
     employeeId: '116',
     employeeName: 'Иванова Иштар Ивановна',
     employeeJob: 'Developer',
+    title: 'Усердно работайте, мечтайте по-крупному.',
     goal: 'HTML',
+    description:
+      'Это документ, в котором чётко прописывается путь его развития: поставленная цель, сроки осуществления и конкретные шаги в развитии знаний и навыков, которые необходимо предпринять сотруднику для достижения установленных компанией бизнес-показателей. ИПР — популярная часть программы развития персонала.',
     deadline: '2024-01-22',
     messageFlag: false,
     status: 'InWork',
-    progress: 80,
+    progress: 66,
     deadlineFlag: false,
     avatar:
       'https://images.unsplash.com/photo-1705642126091-f6a72397a183?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     tasks: [
       {
-        id: 'string',
-        title: 'string',
+        id: '1',
+        title: 'Посмотреть видео',
         deadline: '2024-01-22',
-        description: 'string',
-        status: 'open',
-        linkURL: 'string',
+        description:
+          'Очень отличное видео, тебе точно понравится, не забудь попкорн.',
+        status: 'done',
+        linkURL:
+          'https://core-ds.github.io/core-components/master/?path=/docs/button--docs',
         comments: [
           {
-            id: 'string',
-            content: 'string',
+            id: '4',
+            content:
+              'Длинный комментарий без ограничения по количеству строк и вообще я хочу написать очень длинный комментарий, чтобы сотрудник задумался о том, как коротка и хрупка наша жизнь.',
+            author: 'Самый главный анархист',
+            postdate: '2024-01-22',
+          },
+        ],
+      },
+      {
+        id: '2',
+        title: 'Посмотреть видео',
+        deadline: '2024-01-22',
+        description:
+          'Очень отличное видео, тебе точно понравится, не забудь попкорн.',
+        status: 'done',
+        linkURL:
+          'https://core-ds.github.io/core-components/master/?path=/docs/button--docs',
+        comments: [],
+      },
+      {
+        id: '3',
+        title: 'Посмотреть видео',
+        deadline: '2024-01-22',
+        description:
+          'Очень отличное видео, тебе точно понравится, не забудь попкорн.',
+        status: 'noCompleted',
+        linkURL:
+          'https://core-ds.github.io/core-components/master/?path=/docs/button--docs',
+        comments: [
+          {
+            id: '4',
+            content:
+              'Длинный комментарий без ограничения по количеству строк и вообще я хочу написать очень длинный комментарий, чтобы сотрудник задумался о том, как коротка и хрупка наша жизнь.',
+            author: 'Самый главный анархист',
             postdate: '2024-01-22',
           },
         ],
@@ -304,26 +486,32 @@ export const IDPcardsData = [
     employeeId: '117',
     employeeName: 'Иванов Иван Иванович',
     employeeJob: 'Developer',
+    title: 'Не ждите. Время никогда не будет подходящим.',
     goal: 'Работа в команде, git',
+    description:
+      'ИПР (индивидуальный план развития) — документ определяющий цель, способы и сроки развития сотрудника в организации. Также вы можете встретить английскую аббревиатуру PDP (personal development plan). Буква «и» является самой важной и дорогой из трёх.',
     deadline: '2024-01-22',
     messageFlag: false,
     status: 'InWork',
-    progress: 40,
+    progress: 0,
     deadlineFlag: true,
     avatar:
       'https://images.unsplash.com/photo-1704642407551-7c4c82f644b7?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     tasks: [
       {
-        id: 'string',
-        title: 'string',
+        id: '1',
+        title: 'Посмотреть видео',
         deadline: '2024-01-22',
-        description: 'string',
-        status: 'open',
-        linkURL: 'string',
+        description:
+          'Очень отличное видео, тебе точно понравится, не забудь попкорн.',
+        status: 'inWork',
+        linkURL:
+          'https://core-ds.github.io/core-components/master/?path=/docs/button--docs',
         comments: [
           {
-            id: 'string',
-            content: 'string',
+            id: '1',
+            content: 'Длинный комментарий без ограничения по количеству строк',
+            author: 'Иванов Иван Иванович',
             postdate: '2024-01-22',
           },
         ],
@@ -335,6 +523,7 @@ export const IDPcardsData = [
     employeeId: '118',
     employeeName: 'Иванов Иван Иванович',
     employeeJob: 'Developer',
+    title: '',
     goal: '',
     deadline: '',
     messageFlag: false,

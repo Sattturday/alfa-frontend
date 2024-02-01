@@ -1,17 +1,33 @@
+import { useNavigate } from 'react-router-dom';
+
 import { formatDate } from '../../utils/utils';
 import Dropmenu from '../Dropmenu/Dropmenu';
 import ProgressBar from '../ProgressBar/ProgressBar';
+
 import styles from './IDPCard.module.scss';
 
 const IDPCard = ({ data }) => {
+  const navigate = useNavigate();
+
   const isExpired = data.deadlineFlag ? 'expired' : '';
-  const isEmpty = data.goal ? '' : 'empty';
+  const isEmpty = data.status ? '' : 'empty';
+
+  const handleCardClick = () => {
+    if (!isEmpty) {
+      navigate(`/management/${data.id}`);
+    }
+  };
+
+  const handleSelectStatusClick = (e) => {
+    e.stopPropagation();
+  };
 
   return (
     <li
       className={`${styles.card} ${data.status && styles[data.status]} ${
         isExpired && styles[isExpired]
       } ${isEmpty && styles[isEmpty]}`}
+      onClick={handleCardClick}
     >
       <img className={styles.img} src={data.avatar} alt='Аватар сотрудника' />
       <div className={styles.wrap}>
@@ -21,11 +37,17 @@ const IDPCard = ({ data }) => {
         ></span>
       </div>
       <p className={styles.job}>{data.employeeJob}</p>
-      {isEmpty ? (
-        <button className={styles.button} type='button' />
-      ) : (
-        <Dropmenu />
-      )}
+      <div onClick={handleSelectStatusClick}>
+        {isEmpty ? (
+          <button
+            className={styles.button}
+            type='button'
+            onClick={() => navigate('/create-ipr')}
+          />
+        ) : (
+          <Dropmenu />
+        )}
+      </div>
       <p className={styles.title}>{data.goal}</p>
       <span className={styles.deadline}>
         {isEmpty

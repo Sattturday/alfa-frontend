@@ -1,14 +1,14 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { InputDesktop } from "@alfalab/core-components/input/desktop";
-import { ButtonDesktop } from "@alfalab/core-components/button/desktop";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { InputDesktop } from '@alfalab/core-components/input/desktop';
+import { ButtonDesktop } from '@alfalab/core-components/button/desktop';
 
-import { useForm } from "../../hooks/useForm";
-import BackLink from "../../components/BackLink/BackLink";
-import Helper from "../../components/Helper/Helper";
+import { useForm } from '../../hooks/useForm';
+import BackLink from '../../components/BackLink/BackLink';
+import Helper from '../../components/Helper/Helper';
 
-import styles from "./Login.module.scss";
+import styles from './Login.module.scss';
 
 const Login = ({
   onLogin,
@@ -16,16 +16,23 @@ const Login = ({
   isLoggedLeader = false,
 }) => {
   const navigate = useNavigate();
-  const { values, resetForm, handleChange, errors, setErrors, isValid, setIsValid } =
-    useForm();
+  const {
+    values,
+    resetForm,
+    handleChange,
+    errors,
+    setErrors,
+    isValid,
+    setIsValid,
+  } = useForm();
   const [isFormDisabled, setIsFormDisabled] = React.useState(false);
 
   React.useEffect(() => {
     if (isLoggedEmployee) {
-      navigate("/employee", { replace: true });
+      navigate('/employee', { replace: true });
     }
     if (isLoggedLeader) {
-      navigate("/leader", { replace: true });
+      navigate('/leader', { replace: true });
     }
   });
 
@@ -45,12 +52,12 @@ const Login = ({
 
   return (
     <main className={styles.login}>
-      <BackLink text="Назад" link={"/"} onShowPopup={() => resetForm()} />
+      <BackLink text='Назад' link={'/'} onShowPopup={() => resetForm()} />
       <h1>Сервис работы над ИПР</h1>
       <div className={styles.content}>
         <form
           onSubmit={handleSubmit}
-          id="login-form"
+          id='login-form'
           className={styles.form}
           noValidate
         >
@@ -58,45 +65,45 @@ const Login = ({
           <InputDesktop
             onChange={handleChange}
             required
-            minLength="2"
-            maxLength="30"
-            name="name"
-            label="Логин"
+            minLength='2'
+            maxLength='30'
+            name='name'
+            label='Логин'
             block
-            type="text"
-            size="m"
-            autoComplete="off"
+            type='text'
+            size='m'
+            autoComplete='off'
             disabled={isFormDisabled}
             error={errors.name}
-            value={values.name || ""}
+            value={values.name || ''}
           />
           <InputDesktop
             onChange={handleChange}
             required
-            minLength="6"
-            name="password"
-            label="Пароль"
+            minLength='6'
+            name='password'
+            label='Пароль'
             block
-            autoComplete="off"
-            type="password"
-            size="m"
+            autoComplete='off'
+            type='password'
+            size='m'
             disabled={isFormDisabled}
             error={errors.password}
-            value={values.password || ""}
+            value={values.password || ''}
           />
           <div className={styles.button__field}>
             <ButtonDesktop
               className={styles.button}
-              type="submit"
+              type='submit'
               disabled={!isValid || isFormDisabled}
-              view="accent"
+              view='accent'
             >
               Войти
             </ButtonDesktop>
             <ButtonDesktop
               onClick={handleCancel}
               className={styles.button}
-              view="tertiary"
+              view='tertiary'
               disabled={(!values.name && !values.password) || isFormDisabled}
             >
               Отменить
@@ -105,24 +112,18 @@ const Login = ({
         </form>
 
         <Helper
-          title="На данный момент у нас MVP"
-          advices="Так как мы не находимся в контуре системы Альфа банка, мы пришли 
-        к решению сделать условную авторизацию, для обособленной работы сервиса"
+          title='На данный момент у нас MVP'
+          advices='Так как мы не находимся в контуре системы Альфа банка, мы пришли 
+        к решению сделать условную авторизацию, для обособленной работы сервиса'
         />
       </div>
 
       <div className={styles.wrapperLink}>
-        <Link className={styles.login__link} to={"/leader"}>
+        <Link className={styles.login__link} to={'/leader'}>
           leader
         </Link>
-        <Link className={styles.login__link} to={"/employee"}>
+        <Link className={styles.login__link} to={'/employee'}>
           employee
-        </Link>
-        <Link className={styles.login__link} to={"/create-ipr"}>
-          create-ipr
-        </Link>
-        <Link className={styles.login__link} to={"/management"}>
-          management
         </Link>
       </div>
     </main>
