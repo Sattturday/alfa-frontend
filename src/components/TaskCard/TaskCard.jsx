@@ -12,11 +12,13 @@ import styles from './TaskCard.module.scss';
 function TaskCard({ card }) {
   const dispatch = useDispatch();
 
-  const handleCardClick = (e) => {
-    if (e.target === e.currentTarget) {
-      dispatch(setTask(card));
-      dispatch(openTaskModal('aboutTask'));
-    }
+  const handleCardClick = () => {
+    dispatch(setTask(card));
+    dispatch(openTaskModal('aboutTask'));
+  };
+
+  const handleSelectStatusClick = (e) => {
+    e.stopPropagation();
   };
 
   return (
@@ -32,7 +34,10 @@ function TaskCard({ card }) {
         </div>
         <p className={styles.card__description}>{card.description}</p>
       </div>
-      <SelectStatus task={card} />
+      <div onClick={handleSelectStatusClick}>
+        {/* Этот div занимает оставшуюся область карточки */}
+        <SelectStatus task={card} />
+      </div>
     </article>
   );
 }

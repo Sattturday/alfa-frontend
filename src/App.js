@@ -18,7 +18,7 @@ function App() {
         <Route path='/leader' element={<Leader />} />
         <Route path='/employee' element={<Employee />} />
         <Route path='/create-ipr' element={<CreateIPR />} />
-        <Route path='/management' element={<Management />} />
+        <Route path='/management/:id' element={<Management />} />
       </Routes>
       <TaskModal />
     </div>
