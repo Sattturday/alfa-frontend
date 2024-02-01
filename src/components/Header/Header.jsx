@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import logo from "../../assets/img/logo.svg";
-import avatar from "../../assets/img/avatar.png";
 
 import styles from "./Header.module.scss";
 
 function Header() {
+  const mainAvatar = useSelector((state) => state.user.mainAvatar);
   return (
     <header className={styles.header}>
       <Link to="/" className={styles.logoLink}>
@@ -14,7 +15,7 @@ function Header() {
         <h3>Alfa People</h3>
       </Link>
       <button>
-      <img src={avatar} alt="avatar" />
+        <img src={mainAvatar} alt="avatar" />
       </button>
     </header>
   );
