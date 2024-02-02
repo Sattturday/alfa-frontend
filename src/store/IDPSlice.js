@@ -1,14 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
-const userSlice = createSlice({
-  name: 'user',
+const IDPSlice = createSlice({
+  name: "idp",
   initialState: {
-    allIDPdata: {},
+    allIDPdata: [],
     IDPdata: {},
   },
   reducers: {
-    setUserAvatar(state, action) {
-      state.userAvatar = action.payload;
+    setAllIDPdata(state, action) {
+      state.allIDPdata = action.payload;
     },
     setIDPdata(state, action) {
       state.IDPdata = action.payload;
@@ -16,5 +16,5 @@ const userSlice = createSlice({
   },
 });
 
-export const { setUserAvatar, setIDPdata, changeStatusIpr } = userSlice.actions;
-export default userSlice.reducer;
+export const { setAllIDPdata } = IDPSlice.actions;
+export default IDPSlice.reducer;

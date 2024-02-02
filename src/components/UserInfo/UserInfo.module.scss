@@ -5,6 +5,8 @@
   width: 72px;
   height: 72px;
   border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .info {
@@ -26,6 +28,8 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .info_s {
