@@ -3,9 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const userSlice = createSlice({
   name: 'user',
   initialState: {
-    employee: {},
-    userAvatar: '',
-    role: '',
+    allIDPdata: {},
     IDPdata: {},
   },
   reducers: {
