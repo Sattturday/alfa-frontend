@@ -52,7 +52,7 @@ const Login = ({
 
   return (
     <main className={styles.login}>
-      <BackLink text='Назад' link={'/'} onShowPopup={() => resetForm()} />
+      <BackLink link={'/'} onShowPopup={() => resetForm()} />
       <h1>Сервис работы над ИПР</h1>
       <div className={styles.content}>
         <form

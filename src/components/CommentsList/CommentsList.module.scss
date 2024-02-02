@@ -1,0 +1,82 @@
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/placeholders.scss';
+
+.list {
+  @include list;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  background: $main-white-1;
+}
+
+.item {
+  padding: 8px 0;
+  border-bottom: 1px solid $main-white-secondary-3;
+  @extend %transition-all;
+
+  .wrap {
+    @extend %font-prim;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 1fr repeat(2, min-content);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px 8px;
+    cursor: pointer;
+  }
+
+  &.active {
+    .wrap {
+      background: $main-white-3;
+    }
+  }
+
+  &:hover {
+    .wrap {
+      background-color: $main-white-2;
+    }
+  }
+}
+
+.title {
+  @include text($font-size: 20px, $font-weight: $fw-bold, $line-height: 1.2);
+  max-width: 245px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.status {
+  white-space: nowrap;
+
+  &.noCompleted {
+    @include text1($main-red-1);
+  }
+
+  &.inWork {
+    @include text1($system-yellow);
+  }
+
+  &.done {
+    @include text1($system-green);
+  }
+}
+
+.date {
+  @include text1($main-black-secondary-1);
+}
+
+.text {
+  grid-column: 1 / 3;
+  @include text($main-black-secondary-1);
+  display: -webkit-box;
+  display: box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -ms-line-clamp: 2;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  word-wrap: break-word;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+}

@@ -47,7 +47,6 @@ function Management() {
   return (
     <main>
       <BackLink
-        text='Назад'
         type={!isOpenAboutPlan && 'create-ipr'}
         link={isOpenAboutPlan ? '/leader' : toggleEditIPR}
       />

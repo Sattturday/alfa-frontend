@@ -1,4 +1,8 @@
 export function formatDate(inputDate) {
+  if (!inputDate) {
+    return;
+  }
+
   const parts = inputDate.split('-');
 
   const dateObject = new Date(parts[0], parts[1] - 1, parts[2]);

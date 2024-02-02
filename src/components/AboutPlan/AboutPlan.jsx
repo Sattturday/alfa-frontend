@@ -1,7 +1,8 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
+import { formatDate } from '../../utils/utils';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import Helper from '../Helper/Helper';
 
@@ -51,7 +52,7 @@ function AboutPlan({ onClickEditBtn }) {
             status === 'cancel' && styles.textCancel
           }`}
         >
-          {status === 'cancel' ? 'Остановлен' : `До ${deadline}`}
+          {status === 'cancel' ? 'Остановлен' : `До ${formatDate(deadline)}`}
         </p>
       </div>
       <div className={styles.rightWrapper}>

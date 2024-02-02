@@ -71,15 +71,13 @@
   }
 
   .img {
-  width: 44px;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
+    width: 44px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
 }
-}
-
-
 
 .wrap {
   width: 205px;
@@ -149,4 +147,9 @@
   background-image: url(../../assets/img/create_idp.svg);
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.wrap_drop {
+  width: 40px;
+  justify-self: end;
 }

@@ -9,6 +9,7 @@ import AboutTask from '../AboutTask/AboutTask';
 import Comments from '../Comments/Comments';
 
 import styles from './TaskModal.module.scss';
+import CommentsList from '../CommentsList/CommentsList';
 
 const TaskModal = () => {
   const dispatch = useDispatch();
@@ -40,9 +41,14 @@ const TaskModal = () => {
               navItems={['Создать задачу', 'Использовать шаблон']}
               handleClose={handleClose}
             />
-          ) : (
+          ) : typeTaskModal === 'aboutTask' ? (
             <TaskModalNav
               navItems={['О задаче', 'Комментарии']}
+              handleClose={handleClose}
+            />
+          ) : (
+            <TaskModalNav
+              navItems={['Все комментарии']}
               handleClose={handleClose}
             />
           )}
@@ -66,6 +72,7 @@ const TaskModal = () => {
             ) : (
               <Comments />
             ))}
+          {typeTaskModal === 'allComments' && <CommentsList />}
         </SidePanel.Content>
       </SidePanel>
     </>
