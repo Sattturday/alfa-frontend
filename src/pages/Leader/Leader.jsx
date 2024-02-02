@@ -6,9 +6,9 @@ import ShowList from '../../components/ShowList/ShowList';
 import ConfirmPopup from '../../components/ConfirmPopup/ConfirmPopup';
 import { IDPcardsData } from '../../utils/data';
 import { setUserAvatar } from '../../store/userSlice';
+import { useGetAllIDPQuery } from '../../api/userApi';
 
 import styles from './Leader.module.scss';
-import { useGetAllIDPQuery } from '../../api/userApi';
 
 const Leader = () => {
   const dispatch = useDispatch();
@@ -16,12 +16,9 @@ const Leader = () => {
   const { isActive } = useSelector((state) => state.modal);
 
   // получаем данные всех ИПР с сервера
-  const { data: allIDPdata } = useGetAllIDPQuery();
+  const { data: allIDPdata, isLoading, error } = useGetAllIDPQuery();
 
   console.log(allIDPdata);
-  // здесь не нужно доставать данные из стора, так как мы будет прямо здесь
-  // посылать запрос на сервер и полученные данные сразу же отрисовывать
-  // const { iprCards } = useSelector((state) => state.allIpr);
 
   // здесь мы будем записывать в стор данные юзера
   // здесь имитируем получение данных ИПР при входе с сервера

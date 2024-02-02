@@ -14,9 +14,9 @@ const ShowList = ({ type = 'IDP', cards }) => {
       {(pathname === '/management' || pathname === '/create-ipr') && (
         <AddTaskButton isActive={true} />
       )}
-      {cards?.map((card) => {
+      {cards?.map((card, index) => {
         return type === 'IDP' ? (
-          <IDPCard key={card.id} data={card} />
+          <IDPCard key={index} data={card} />
         ) : (
           <TaskCard key={card.id} card={card} />
         );

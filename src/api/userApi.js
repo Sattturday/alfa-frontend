@@ -22,11 +22,15 @@ export const userApi = createApi({
     //     };
     //   },
     // }),
+
     // Определение запросa для получения списка всех ИПР
     getAllIDP: build.query({
       query: () => 'employee/get_all_users_and_ipr/',
     }),
+    getUserIDP: build.query({
+      query: () => 'employee_get_ipr/',
+    }),
   }),
 });
 
-export const { useGetAllIDPQuery } = userApi;
+export const { useGetAllIDPQuery, useGetUserIDPQuery } = userApi;

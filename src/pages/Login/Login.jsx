@@ -44,13 +44,15 @@ const Login = ({
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     /* onLogin() */
+    setIsFormDisabled(true);
+
     try {
       const response = await login({
         email: values.name,
         password: values.password,
       }).unwrap();
       localStorage.setItem('token', response.access);
-      setIsFormDisabled(true);
+
       alert(`Логин: ${values.name} Пароль: ${values.password}`); //удалить
       resetForm();
       setIsFormDisabled(false);
