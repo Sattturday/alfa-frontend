@@ -11,7 +11,7 @@
   </div>
   <div>
     <a href="https://Sattturday.github.io/alfa-frontend" target="_blank" rel="noreferrer">
-      <img src="https://github.com/RandyCheBro/imgs-for-README/blob/main/alfa-people_3.png?raw=true" width="48%" height="300">
+      <img src="https://github.com/RandyCheBro/imgs-for-README/blob/main/alfa-people_3.png?raw=true" width="49%" height="300">
     </a>&nbsp;
     <a href="https://Sattturday.github.io/alfa-frontend" target="_blank" rel="noreferrer">
       <img src="https://github.com/RandyCheBro/imgs-for-README/blob/main/alfa-people_4.png?raw=true" width="48%" height="300">
