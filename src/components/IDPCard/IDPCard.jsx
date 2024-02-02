@@ -37,7 +37,7 @@ const IDPCard = ({ data }) => {
         ></span>
       </div>
       <p className={styles.job}>{data.employeeJob}</p>
-      <div onClick={handleSelectStatusClick}>
+      <div className={styles.wrap_drop} onClick={handleSelectStatusClick}>
         {isEmpty ? (
           <button
             className={styles.button}

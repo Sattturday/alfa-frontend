@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import BackLink from '../../components/BackLink/BackLink';
 import ShowList from '../../components/ShowList/ShowList';
 import ConfirmPopup from '../../components/ConfirmPopup/ConfirmPopup';
-
-import styles from './Leader.module.scss';
 import { IDPcardsData } from '../../utils/data';
 import { setUserAvatar } from '../../store/userSlice';
+
+import styles from './Leader.module.scss';
 
 const Leader = () => {
   const dispatch = useDispatch();
@@ -38,7 +39,7 @@ const Leader = () => {
   };
   return (
     <section className={styles.leader}>
-      <BackLink text='Назад' link='/' />
+      <BackLink link='/' />
       <h1 className={styles.leader__title}>
         Индивидуальные планы развития для сотрудников
       </h1>

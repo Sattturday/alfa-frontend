@@ -4,6 +4,7 @@ const initialState = {
   isOpenTaskModal: false,
   isSaveSample: false,
   isEditTask: false,
+  isBack: false,
   typeTaskModal: '',
   isNavItemActive: 'primary',
   dirSample: {},
@@ -20,8 +21,10 @@ const taskSlice = createSlice({
       state.typeTaskModal = action.payload;
     },
     closeTaskModal(state) {
-      // Возвращаем начальное состояние
       return initialState;
+    },
+    toggleIsBack(state) {
+      state.isBack = !state.isBack;
     },
     setTypeTaskModal(state, action) {
       state.typeTaskModal = action.payload;
@@ -51,6 +54,7 @@ const taskSlice = createSlice({
 export const {
   openTaskModal,
   closeTaskModal,
+  toggleIsBack,
   setTypeTaskModal,
   setIsNavItemActive,
   setDirSample,

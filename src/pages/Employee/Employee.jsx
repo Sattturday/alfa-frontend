@@ -36,7 +36,7 @@ function Employee() {
 
   return (
     <main className={styles.employee}>
-      <BackLink text='Назад' link='/' />
+      <BackLink link='/' />
       <Profile />
       {IDPdata.status === '' && (
         <div className={styles.empty}>

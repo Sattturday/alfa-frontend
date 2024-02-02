@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import yellowColorArrow from '../../assets/img/select-arrow-yellow.svg';
 import redColorArrow from '../../assets/img/select-arrow-red.svg';
 import greenColorArrow from '../../assets/img/select-arrow-green.svg';
+import { formatDate } from '../../utils/utils';
 import '../../styles/abstract/constants.scss';
 
 import styles from './SelectStatus.module.scss';
@@ -73,7 +74,7 @@ function SelectStatus({ task }) {
 
   return (
     <div className={styles.card__block}>
-      <p>{`До ${task.deadline}`}</p>
+      <p>{`До ${formatDate(task.deadline)}`}</p>
       <div className={styles.dropdown} id='status'>
         <button
           name='status'

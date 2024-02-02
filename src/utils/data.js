@@ -23,36 +23,42 @@ export const samplesData = [
     title: 'Проснись',
     description: 'Встань с кровати',
     linkURL: 'https://www.example/',
+    department: 'Фронтенд',
   },
   {
     id: '2',
     title: 'И пой',
     description: 'Попробуй',
     linkURL: 'https://www.example/',
+    department: 'QA',
   },
   {
     id: '3',
     title: 'Выпей чаю',
     description: 'Черного',
     linkURL: 'https://www.example/',
+    department: 'BA',
   },
   {
     id: '4',
     title: 'Смотри',
     description: 'За собой',
     linkURL: 'https://www.example/',
+    department: 'Бэкэнд',
   },
   {
     id: '5',
     title: 'Учись',
     description: 'Работа с компонентами',
     linkURL: 'https://www.example/',
+    department: 'Фронтенд',
   },
   {
     id: '6',
     title: 'И еще',
     description: 'Прочитай книгу',
     linkURL: 'https://www.example/',
+    department: 'Фронтенд',
   },
 ];
 
@@ -69,7 +75,7 @@ export const IDPcardsData = [
     deadline: '2024-01-22',
     status: 'InWork',
     deadlineFlag: false,
-    messageFlag: false,
+    messageFlag: true,
     progress: 33,
     avatar:
       'https://images.unsplash.com/photo-1668342482782-582a821eaa59?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
@@ -114,9 +120,9 @@ export const IDPcardsData = [
       },
       {
         id: '2',
-        title: 'Почисти зубы',
+        title: 'Умываться, умываться, умываться, умываться',
         deadline: '2024-02-22',
-        description: 'Почисти зубы и умойся',
+        description: 'Почисти зубы и умойся, и причесаться не забудь',
         status: 'inWork',
         linkURL:
           'https://www.youtube.com/watch?v=cP97KKCq4eg&list=PLiZoB8JBsdzlG1oAY8U4vrBtVW07j6jil&index=19',
@@ -157,7 +163,7 @@ export const IDPcardsData = [
     description:
       'Ты мощь, ты сила, уважаю, ты красавчик. Однаждый в студеную зимнюю пору я из лесу вышел, был сильный мороз.Ты мощь, ты сила, уважаю, ты красавчик. Однаждый в студеную зимную пору я из лесу вышел, был сильный мороз.',
     deadline: '2024-01-22',
-    messageFlag: false,
+    messageFlag: true,
     status: 'InWork',
     progress: 0,
     deadlineFlag: false,
@@ -328,7 +334,7 @@ export const IDPcardsData = [
     description:
       'Индивидуальный план развития – часть системы управления персоналом. Представляет собой документ, в котором изложена стратегия развития компетенций и расширения сферы знаний сотрудника.',
     deadline: '2024-01-22',
-    messageFlag: false,
+    messageFlag: true,
     status: 'Canceled',
     progress: 50,
     deadlineFlag: false,
@@ -384,25 +390,6 @@ export const IDPcardsData = [
           'https://core-ds.github.io/core-components/master/?path=/docs/button--docs',
         comments: [
           {
-            id: '1',
-            content: 'Длинный комментарий без ограничения по количеству строк',
-            author: 'Иванов Иван Иванович',
-            postdate: '2024-01-22',
-          },
-          {
-            id: '2',
-            content:
-              'Длинный комментарий без ограничения по количеству строк и вообще я хочу написать очень длинный комментарий, чтобы сотрудник задумался о том, как коротка и хрупка наша жизнь.',
-            author: 'Самый главный анархист',
-            postdate: '2024-01-22',
-          },
-          {
-            id: '3',
-            content: 'Длинный комментарий без ограничения по количеству строк',
-            author: 'Иванов Иван Иванович',
-            postdate: '2024-01-22',
-          },
-          {
             id: '4',
             content:
               'Длинный комментарий без ограничения по количеству строк и вообще я хочу написать очень длинный комментарий, чтобы сотрудник задумался о том, как коротка и хрупка наша жизнь.',
@@ -439,15 +426,7 @@ export const IDPcardsData = [
         status: 'done',
         linkURL:
           'https://core-ds.github.io/core-components/master/?path=/docs/button--docs',
-        comments: [
-          {
-            id: '4',
-            content:
-              'Длинный комментарий без ограничения по количеству строк и вообще я хочу написать очень длинный комментарий, чтобы сотрудник задумался о том, как коротка и хрупка наша жизнь.',
-            author: 'Самый главный анархист',
-            postdate: '2024-01-22',
-          },
-        ],
+        comments: [],
       },
       {
         id: '2',
@@ -469,15 +448,7 @@ export const IDPcardsData = [
         status: 'noCompleted',
         linkURL:
           'https://core-ds.github.io/core-components/master/?path=/docs/button--docs',
-        comments: [
-          {
-            id: '4',
-            content:
-              'Длинный комментарий без ограничения по количеству строк и вообще я хочу написать очень длинный комментарий, чтобы сотрудник задумался о том, как коротка и хрупка наша жизнь.',
-            author: 'Самый главный анархист',
-            postdate: '2024-01-22',
-          },
-        ],
+        comments: [],
       },
     ],
   },
@@ -491,7 +462,7 @@ export const IDPcardsData = [
     description:
       'ИПР (индивидуальный план развития) — документ определяющий цель, способы и сроки развития сотрудника в организации. Также вы можете встретить английскую аббревиатуру PDP (personal development plan). Буква «и» является самой важной и дорогой из трёх.',
     deadline: '2024-01-22',
-    messageFlag: false,
+    messageFlag: true,
     status: 'InWork',
     progress: 0,
     deadlineFlag: true,
