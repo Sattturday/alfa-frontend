@@ -1,9 +1,10 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { InputDesktop } from '@alfalab/core-components/input/desktop';
 import { ButtonDesktop } from '@alfalab/core-components/button/desktop';
 
+import { useLoginMutation } from '../../api/authApi';
 import { useForm } from '../../hooks/useForm';
 import BackLink from '../../components/BackLink/BackLink';
 import Helper from '../../components/Helper/Helper';
@@ -15,7 +16,10 @@ const Login = ({
   isLoggedEmployee = false,
   isLoggedLeader = false,
 }) => {
+  const [login, { isLoading, error }] = useLoginMutation();
+
   const navigate = useNavigate();
+
   const {
     values,
     resetForm,
@@ -25,9 +29,10 @@ const Login = ({
     isValid,
     setIsValid,
   } = useForm();
-  const [isFormDisabled, setIsFormDisabled] = React.useState(false);
 
-  React.useEffect(() => {
+  const [isFormDisabled, setIsFormDisabled] = useState(false);
+
+  useEffect(() => {
     if (isLoggedEmployee) {
       navigate('/employee', { replace: true });
     }
@@ -36,13 +41,22 @@ const Login = ({
     }
   });
 
-  const handleSubmit = (evt) => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault();
     /* onLogin() */
-    setIsFormDisabled(true);
-    alert(`Логин: ${values.name} Пароль: ${values.password}`); //удалить
-    resetForm();
-    setIsFormDisabled(false);
+    try {
+      const response = await login({
+        email: values.name,
+        password: values.password,
+      }).unwrap();
+      localStorage.setItem('token', response.access);
+      setIsFormDisabled(true);
+      alert(`Логин: ${values.name} Пароль: ${values.password}`); //удалить
+      resetForm();
+      setIsFormDisabled(false);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleCancel = () => {
@@ -80,7 +94,7 @@ const Login = ({
           <InputDesktop
             onChange={handleChange}
             required
-            minLength='6'
+            minLength='5'
             name='password'
             label='Пароль'
             block

@@ -8,11 +8,17 @@ import { IDPcardsData } from '../../utils/data';
 import { setUserAvatar } from '../../store/userSlice';
 
 import styles from './Leader.module.scss';
+import { useGetAllIDPQuery } from '../../api/userApi';
 
 const Leader = () => {
   const dispatch = useDispatch();
 
   const { isActive } = useSelector((state) => state.modal);
+
+  // получаем данные всех ИПР с сервера
+  const { data: allIDPdata } = useGetAllIDPQuery();
+
+  console.log(allIDPdata);
   // здесь не нужно доставать данные из стора, так как мы будет прямо здесь
   // посылать запрос на сервер и полученные данные сразу же отрисовывать
   // const { iprCards } = useSelector((state) => state.allIpr);
@@ -37,6 +43,7 @@ const Leader = () => {
   const handleCancelIPR = () => {
     console.log('delete');
   };
+
   return (
     <section className={styles.leader}>
       <BackLink link='/' />

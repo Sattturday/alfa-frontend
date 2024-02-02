@@ -17,3 +17,8 @@ export function formatDate(inputDate) {
 
   return formattedDate;
 }
+
+// получаем токен из ЛС
+export const getAuthToken = () => {
+  return localStorage.getItem('token');
+};
