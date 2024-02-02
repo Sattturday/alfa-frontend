@@ -13,6 +13,8 @@
     @include link;
 
     img {
+      object-fit: cover;
+      object-position: center;
       border-radius: 50%;
       width: 43px;
       height: 43px;
