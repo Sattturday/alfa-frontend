@@ -22,3 +22,16 @@ export function formatDate(inputDate) {
 export const getAuthToken = () => {
   return localStorage.getItem('token');
 };
+
+// определяем, есть ли комментарии хоть в одной задаче
+export function hasComments(tasks) {
+  // Проходимся по каждой задаче
+  for (let i = 0; i < tasks.length; i++) {
+    const task = tasks[i];
+    // Проверяем, есть ли комментарии у текущей задачи
+    if (task.has_comments && task.comments) {
+      return true; // Если есть хотя бы один комментарий, возвращаем true
+    }
+  }
+  return false; // Если не найдено ни одного комментария, возвращаем false
+}

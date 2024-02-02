@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import BackLink from '../../components/BackLink/BackLink';
 import ShowList from '../../components/ShowList/ShowList';
 import ConfirmPopup from '../../components/ConfirmPopup/ConfirmPopup';
-import { IDPcardsData } from '../../utils/data';
+import { IDPcardsData, allRealData } from '../../utils/data';
 import { setUserAvatar } from '../../store/userSlice';
 import { useGetAllIDPQuery } from '../../api/userApi';
 
@@ -18,7 +18,11 @@ const Leader = () => {
   // получаем данные всех ИПР с сервера
   const { data: allIDPdata, isLoading, error } = useGetAllIDPQuery();
 
-  console.log(allIDPdata);
+  useEffect(() => {
+    if (allIDPdata) {
+      console.log('hi');
+    }
+  }, [allIDPdata]);
 
   // здесь мы будем записывать в стор данные юзера
   // здесь имитируем получение данных ИПР при входе с сервера
@@ -47,7 +51,7 @@ const Leader = () => {
       <h1 className={styles.leader__title}>
         Индивидуальные планы развития для сотрудников
       </h1>
-      <ShowList cards={IDPcardsData} />
+      <ShowList cards={allRealData} />
       {(isActive === 'complete' && (
         <ConfirmPopup onClickOk={handleCompleteIPR} />
       )) ||
