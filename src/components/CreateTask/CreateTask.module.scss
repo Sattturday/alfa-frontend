@@ -1,0 +1,30 @@
+@import '../../styles/abstract/placeholders.scss';
+@import '../../styles/abstract/constants.scss';
+@import '../../styles/abstract/mixins.scss';
+
+.create_task {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.button {
+  width: 192px;
+
+  //color: $main-white-secondary-3;
+}
+
+.samples {
+  width: 248px;
+}
+
+.option {
+  @include text($line-height: 1.25);
+  @extend %font-prim;
+}
+
+.switch {
+  @include text($line-height: 1.25);
+  @extend %font-prim;
+}

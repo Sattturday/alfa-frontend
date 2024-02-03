@@ -1,0 +1,108 @@
+@import "../../styles/abstract/mixins.scss";
+@import "../../styles/abstract/constants.scss";
+
+.overlay {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  transition: all 0.5s ease-in-out;
+
+  .popup_container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    width: 600px;
+    height: 308px;
+    padding: 40px 44px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    background-color: $main-white-1;
+    border-radius: 12px;
+    z-index: 5;
+  }
+
+  .popup_container_l {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    width: 600px;
+    height: 364px;
+    padding: 40px 44px;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    background-color: $main-white-1;
+    border-radius: 12px;
+    z-index: 5;
+  }
+
+  .title {
+    @include text($font-size: 32px, $font-weight: $fw-bold, $line-height: 40px);
+    white-space: wrap;
+    height: 80px;
+  }
+
+  .text {
+    @include text;
+    height: 60px;
+  }
+}
+
+.overlay_active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.button_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 237px;
+}
+
+.button_container_l {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 298px;
+}
+
+.button_cancel {
+  width: 137px;
+  height: 56px;
+}
+
+.button_confirm {
+  width: 84px;
+  height: 56px;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.button_confirm_l {
+  width: 149px;
+  height: 56px;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.user_wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-top: 16px;
+}
+
+.name_IPR {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  @include text($font-weight: $fw-bold, $font-size: 20px, $line-height: 24px);
+}

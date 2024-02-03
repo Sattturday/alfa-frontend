@@ -1,3 +1,5 @@
+@import './constants.scss';
+
 // списки, ссылки, кнопки, иконки
 @mixin list {
   margin: 0;
@@ -28,27 +30,100 @@
   user-select: none;
 }
 
+@mixin scrollbars {
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $main-white-secondary-3;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $main-black-secondary-2;
+    border-radius: 8px;
+    height: 32px;
+    width: 4px;
+  }
+}
+
+//для рамок!
+@mixin border($color: $main-white-secondary-3) {
+  border: 1px solid $color;
+}
+
 // для заголовков страниц
-@mixin section-title($color: $main-black-1) {
+@mixin section-title($color: $main-black-1, $font-weight: $fw-bold) {
   margin: 0;
   color: $color;
-  font-size: 3.2rem;
-  font-weight: $fw-semibold;
+  font-size: 32px;
+  font-weight: $font-weight; //700
+  line-height: 1.25;
+}
+
+@mixin section-title2($color: $main-black-1) {
+  margin: 0;
+  color: $color;
+  font-size: 32px;
+  font-weight: $fw-semibold; //600
   line-height: 1.25;
 }
 
 // для текста
 @mixin text(
   $color: $main-black-1,
-  $font-size: 1.6rem,
+  $font-size: 16px,
   $font-weight: $fw-regular,
   $line-height: normal
 ) {
   margin: 0;
   color: $color;
   font-size: $font-size;
+  font-weight: $font-weight; //400
+  line-height: $line-height;
+}
+
+//отличается от text жирность 500, line-height 20px
+@mixin text1(
+  $color: $main-black-1,
+  $font-size: 16px,
+  $font-weight: $fw-medium,
+  $line-height: 1.25
+) {
+  margin: 0;
+  color: $color;
+  font-size: $font-size; //500
   font-weight: $font-weight;
   line-height: $line-height;
+}
+
+//такой же текст, только серый, чаще всего использует для subtitle
+@mixin text1-gray(
+  $color: $main-black-secondary-2,
+  $font-size: 16px,
+  $font-weight: $fw-medium,
+  $line-height: 1.25
+) {
+  margin: 0;
+  color: $color;
+  font-size: $font-size; //500
+  font-weight: $font-weight;
+  line-height: $line-height;
+}
+
+//текст для даты
+@mixin text1-date(
+  $color: $main-black-1,
+  $font-size: 12px,
+  $font-weight: $fw-medium,
+  $line-height: 1.33
+) {
+  margin: 0;
+  color: $color;
+  font-size: $font-size; //500
+  font-weight: $font-weight;
+  line-height: $line-height;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 // это оставлю тут временно, если ховеры будут одинаковыми по проекту,

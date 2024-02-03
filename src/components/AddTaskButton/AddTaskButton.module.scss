@@ -1,0 +1,37 @@
+@import "../../styles/abstract/mixins.scss";
+@import "../../styles/abstract/constants.scss";
+
+.button {
+  @include button;
+  border: 1px solid $main-white-secondary-3;
+  border-radius: 16px;
+  width: 282px;
+  height: 192px;
+  background-color: white;
+  transition: ease 0.9s;
+
+  &:hover {
+    background-color: $main-white-2;
+  }
+
+  &:disabled {
+    background-color: $main-white-3;
+    cursor: default;
+  }
+
+  .button_text {
+    @include text($color: $main-white-secondary-3, $font-weight: $fw-bold, $font-size: 20px);
+    padding-bottom: 4px;
+    border-bottom: 4px solid $main-red-1;
+
+    &:hover {
+      border-bottom: 4px solid $main-red-2;
+    }
+
+    &_invalid {
+      @include text($color: $main-white-secondary-3, $font-weight: $fw-bold, $font-size: 20px);
+      padding-bottom: 4px;
+      border-bottom: 4px solid $main-white-secondary-3;
+    }
+  }
+}

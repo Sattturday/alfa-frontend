@@ -1,0 +1,68 @@
+@import '../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/placeholders.scss';
+
+.login {
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    @include section-title;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    height: 326px;
+    gap: 228px;
+    margin-top: 32px;
+  }
+
+  .form {
+    width: 588px;
+    min-height: 324px;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    gap: 16px;
+
+    padding: 40px 40px;
+    @include border;
+
+    input {
+      font-family: 'Roboto';
+    }
+
+    h3 {
+      @include text($font-size: 20px, $font-weight: $fw-bold);
+      margin-bottom: 4px;
+    }
+
+    .button__field {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .button {
+      width: 246px;
+      font-family: 'Roboto';
+
+      &:disabled {
+        background-color: $main-white-2;
+        border: none;
+      }
+    }
+  }
+}
+
+.wrapperLink {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 70px
+}
+
+.login__link {
+  @include link;
+  @include text1($color: $main-black-secondary-2);
+}

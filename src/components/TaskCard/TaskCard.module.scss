@@ -1,0 +1,48 @@
+@import '../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/constants.scss';
+
+.card {
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  width: 282px;
+  height: 192px;
+  border: 1px solid $main-white-secondary-3;
+  border-radius: 16px;
+  justify-content: space-between;
+  transition: ease 0.9s;
+
+  &:hover {
+    background-color: $main-white-2;
+  }
+
+  &:active {
+    background-color: $main-white-3;
+  }
+}
+
+.card__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 242px;
+
+  h3 {
+    @include text;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: $fw-bold;
+    font-size: 20px;
+    line-height: 24px;
+    max-width: 222px;
+  }
+}
+
+.card__description {
+  @include text($color: $main-black-secondary-2);
+  margin-top: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

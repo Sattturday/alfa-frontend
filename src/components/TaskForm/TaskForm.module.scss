@@ -1,0 +1,24 @@
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .input_date {
+    width: 248px;
+  }
+
+  .instruction_container {
+    display: flex;
+    flex-direction: column;
+    width: 341px;
+    height: 220px;
+    padding: 12px;
+
+    img {
+      width: 46px;
+      height: 48px;
+      margin-bottom: 8px;
+    }
+  }
+}

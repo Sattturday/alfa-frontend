@@ -1,0 +1,70 @@
+@import '../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/constants.scss';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 520px;
+  border: 1px solid $main-white-secondary-3;
+  border-radius: 30px;
+  padding: 40px;
+  margin-bottom: 32px;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  h3 {
+    @include text($font-weight: $fw-bold, $font-size: 20px, $line-height: 24px);
+  }
+
+  p {
+    margin: 4px 0 0 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  ul {
+    margin: 0 0 0 26px;
+    padding: 0;
+
+    li {
+      @include text($color: $main-black-secondary-2);
+      overflow: visible;
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 760px;
+    height: 304px;
+
+    .input_date {
+      width: 344px;
+    }
+  }
+
+  .button {
+    width: 127px;
+    height: 56px;
+
+    &:disabled {
+      cursor: default;
+    }
+  }
+
+  .button_save {
+    width: 229px;
+  }
+
+  .button_cancel {
+    width: 137px;
+  }
+}

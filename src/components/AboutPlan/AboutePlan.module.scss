@@ -1,0 +1,78 @@
+@import '../../styles/abstract/mixins.scss';
+@import '../../styles/abstract/constants.scss';
+
+.root {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  border-radius: 30px;
+  @include border;
+
+  .textCancel {
+    color: $main-white-secondary-3!important;
+  }
+
+  .top {
+    display: flex;
+    gap: 35px;
+  }
+
+  .bot {
+    display: flex;
+    gap: 50px;
+  }
+
+  .infoColumn {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+
+    h2 {
+      @include section-title;
+    }
+
+    .subtitle {
+      padding-top: 4px;
+      @include text1($font-weight: $fw-regular);
+    }
+
+    .description {
+      max-width: 760px;
+      padding-top: 16px;
+      @include text($color: $main-black-secondary-2, $line-height: 1.25);
+    }
+
+    .data {
+      padding-top: 16px;
+      @include text($font-size: 20px, $font-weight: $fw-bold);
+    }
+  }
+
+  .rightWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .editIcon {
+    @include button;
+    align-self: flex-end;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: initial;
+    background-image: url('../../assets/img/icon_edit.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    transition: all 0.3s linear;
+
+    &:hover {
+      background-color: $main-white-2;
+    }
+
+    &:active {
+      background-color: $main-white-3;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import '../../styles/abstract/mixins.scss';
+
+
+.employee {
+  display: flex;
+  flex-direction: column;
+
+  .empty {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 40px;
+    border-radius: 30px;
+    @include border;
+  }
+}

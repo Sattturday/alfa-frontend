@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Проект: Alfa-People-Frontend
+<div>
+  <div>
+    </a>&nbsp;
+    <a href="https://Sattturday.github.io/alfa-frontend" target="_blank" rel="noreferrer">
+      <img src="https://github.com/RandyCheBro/imgs-for-README/blob/main/alfa-people_1.png?raw=true" width="48%" height="300">
+    </a>&nbsp;
+    <a href="https://Sattturday.github.io/alfa-frontend" target="_blank" rel="noreferrer">
+      <img src="https://github.com/RandyCheBro/imgs-for-README/blob/main/alfa-people_2.png?raw=true" width="48%" height="300">
+    </a>&nbsp;
+  </div>
+  <div>
+    <a href="https://Sattturday.github.io/alfa-frontend" target="_blank" rel="noreferrer">
+      <img src="https://github.com/RandyCheBro/imgs-for-README/blob/main/alfa-people_3.png?raw=true" width="49%" height="300">
+    </a>&nbsp;
+    <a href="https://Sattturday.github.io/alfa-frontend" target="_blank" rel="noreferrer">
+      <img src="https://github.com/RandyCheBro/imgs-for-README/blob/main/alfa-people_4.png?raw=true" width="48%" height="300">
+    </a>&nbsp;
+  </div>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Обзор
 
-## Available Scripts
+_Alfa-People это функциональный управленческий сервис, который позволяет руководителю и сотрудникам компании взаимодействовать с Индивидуальным планом развития(ИПР). Сервис с ИПР предоставляет ряд возможностей для повышения эффективности командной работы и профессиональной квалификации сотрудников._
 
-In the project directory, you can run:
+**Руководитель:**
+* Может на одной странице получить список всех своих сотрудников с их: именем, занимаемой должностью, ИПР или его отсутствием, а также с прогрессом выполнения ИПР.
+* При клике на карточку сотрудника без текущего ИПР, попадает на страницу создания нового ИПР.
+* При клике на карточку выбранного сотрудника, руководитель может наблюдать расширенную версию ИПР с перечислением всех задач, нужных для его выполнения.
+* Может остановить, удалить, или редактировать текущий  ИПР.
+* Может добавить дополнительную задачу, нужную для выполнения ИПР.
+* При клике на задачу, получает более подробное её описание с комментариями.
+* При необходимости может удалить или редактировать задачу, а также добавить новые комментарии.
+ 
+**Сотрудник:**
+* При авторизации попадает на главную страницу сотрудника, где отбражается его личная информация и текущий ИПР с четко расписанными: названием ИПР, целью, описанием, крайним сроком выполнения и прогрессом выполнения.
+* Может просмотреть список задач, нужных для выполнения ИПР, и по необходимости поменять им статус.
+* При клике на задачу, получает более подробное её описание с комментариями.
+* При необходимости может добавить новые комментарии к задаче, для уточнения условий и способов её выполнения у руководителя.
 
-### `npm start`
+## Стэк:
+<div>
+  <img src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/html5/html5-original.svg" title="HTML5" alt="HTML" width="40" height="40"/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  <img src="https://github.com/tandpfun/skill-icons/blob/main/icons/Sass.svg" title="SCSS" alt="SCSS" width="40" height="40"/>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  <img src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" width="40" height="40"/>
 
-### `npm test`
+  <img src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/react/react-original-wordmark.svg" title="React" alt="React" width="40" height="40"/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/redux_original_logo_icon_146365.png" title="Redux Toolkit" alt="Redux Toolkit" width="40" height="40"/>
 
-### `npm run build`
+  <img src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/git/git-original.svg" title="Git" alt="Git" width="40" height="40"/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  <img src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/figma/figma-original.svg" title="Figma" alt="Figma" width="40" height="40"/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  <img src="https://raw.githubusercontent.com/devicons/devicon/1119b9f84c0290e0f0b38982099a2bd027a48bf1/icons/vscode/vscode-original.svg" title="VSCode" alt="VSCode" width="40" height="40"/>
+</div>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## В создании фронтенд части проекта участвовали:
 
-### `npm run eject`
+- [Alla Magina](https://github.com/Sattturday)
+- [Kolya Shchelokov](https://github.com/RandyCheBro)
+- [Dmitry-Rusinov](https://github.com/Dmitry-Rusinov)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Ссылки на проект:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Ссылка на развернутый проект на удалённом сервере](https://Sattturday.github.io/alfa-frontend)
+- [Ссылка на репозиторий в Pages](https://Sattturday.github.io/alfa-frontend)
+- [Backend ](https://github.com/zhukov1414/MVP)
