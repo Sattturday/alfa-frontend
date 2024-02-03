@@ -1,15 +1,15 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import BackLink from "../../components/BackLink/BackLink";
-import ShowList from "../../components/ShowList/ShowList";
-import ConfirmPopup from "../../components/ConfirmPopup/ConfirmPopup";
-import { IDPcardsData } from "../../utils/data";
-import { setUserAvatar } from "../../store/userSlice";
-import { setAllIDPdata } from "../../store/IDPSlice";
-import { useGetAllIDPQuery } from "../../api/userApi";
+import BackLink from '../../components/BackLink/BackLink';
+import ShowList from '../../components/ShowList/ShowList';
+import ConfirmPopup from '../../components/ConfirmPopup/ConfirmPopup';
+import { IDPcardsData } from '../../utils/data';
+import { setUserAvatar } from '../../store/userSlice';
+import { setAllIDPdata } from '../../store/IDPSlice';
+import { useGetAllIDPQuery } from '../../api/userApi';
 
-import styles from "./Leader.module.scss";
+import styles from './Leader.module.scss';
 
 const Leader = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ const Leader = () => {
 
   useEffect(() => {
     if (IDPdata) {
-      dispatch(setAllIDPdata([...IDPdata.with_ipr, ...IDPdata.without_ipr]));
+      dispatch(setAllIDPdata(IDPdata));
     }
   }, [IDPdata]);
 
@@ -31,31 +31,31 @@ const Leader = () => {
   }, []);
 
   const handleCompleteIPR = () => {
-    console.log("complete");
+    console.log('complete');
   };
 
   const handleDeleteIPR = () => {
-    console.log("delete");
+    console.log('delete');
   };
 
   const handleCancelIPR = () => {
-    console.log("delete");
+    console.log('delete');
   };
 
   return (
     <section className={styles.leader}>
-      <BackLink link="/" />
+      <BackLink link='/' />
       <h1 className={styles.leader__title}>
         Индивидуальные планы развития для сотрудников
       </h1>
       <ShowList cards={allIDPdata} />
-      {(isActive === "complete" && (
+      {(isActive === 'complete' && (
         <ConfirmPopup onClickOk={handleCompleteIPR} />
       )) ||
-        (isActive === "cancel-card" && (
+        (isActive === 'cancel-card' && (
           <ConfirmPopup onClickOk={handleCancelIPR} />
         )) ||
-        (isActive === "delete" && <ConfirmPopup onClickOk={handleDeleteIPR} />)}
+        (isActive === 'delete' && <ConfirmPopup onClickOk={handleDeleteIPR} />)}
     </section>
   );
 };

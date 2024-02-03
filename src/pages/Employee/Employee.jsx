@@ -16,6 +16,7 @@ import {
 
 import styles from './Employee.module.scss';
 import { useGetUserIDPQuery } from '../../api/userApi';
+import { useGetIDPbyIdQuery } from '../../api/IDPApi';
 
 function Employee() {
   const dispatch = useDispatch();
@@ -23,17 +24,17 @@ function Employee() {
   // здесь имитируем получение данных ИПР при входе с сервера
   const dataIDP = IDPcardsData[0];
 
-  const { data: userIDPdata, isLoading, error } = useGetUserIDPQuery();
+  // достаем из стора актуальные данные
+  const { IDPdata } = useSelector((state) => state.user);
+  //const id = employee.id;
+  // const { data: userIDPdata, isLoading, error } = useGetIDPbyIdQuery({ id });
 
-  console.log(userIDPdata);
+  // console.log(userIDPdata);
   // записываем в стор, но потом вожможно это надо будет делать в другом месте, сразу после авторизации
   useEffect(() => {
     dispatch(setIDPdata(dataIDP));
     dispatch(setUserAvatar(dataIDP.avatar));
   }, []);
-
-  // достаем из стора актуальные данные
-  const { IDPdata } = useSelector((state) => state.user);
 
   return (
     <main className={styles.employee}>

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { InputDesktop } from '@alfalab/core-components/input/desktop';
 import { ButtonDesktop } from '@alfalab/core-components/button/desktop';
 
 import { useLoginMutation } from '../../api/authApi';
+import { useGetMeQuery } from '../../api/userApi';
 import { useForm } from '../../hooks/useForm';
 import BackLink from '../../components/BackLink/BackLink';
 import Helper from '../../components/Helper/Helper';
@@ -17,6 +17,13 @@ const Login = ({
   isLoggedLeader = false,
 }) => {
   const [login, { isLoading, error }] = useLoginMutation();
+  const { data: userData } = useGetMeQuery();
+
+  useEffect(() => {
+    if (userData) {
+      console.log(userData);
+    }
+  }, [userData]);
 
   const navigate = useNavigate();
 
@@ -48,12 +55,11 @@ const Login = ({
 
     try {
       const response = await login({
-        email: values.name,
+        username: values.name,
         password: values.password,
       }).unwrap();
-      localStorage.setItem('token', response.access);
+      localStorage.setItem('token', response.auth_token);
 
-      alert(`Логин: ${values.name} Пароль: ${values.password}`); //удалить
       resetForm();
       setIsFormDisabled(false);
     } catch (error) {
