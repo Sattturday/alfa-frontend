@@ -96,7 +96,7 @@ const Login = ({
           <InputDesktop
             onChange={handleChange}
             required
-            minLength='5'
+            minLength='3'
             name='password'
             label='Пароль'
             block
