@@ -8,11 +8,14 @@ import {
   setDataInfo,
 } from '../../store/modalSlice';
 import { openTaskModal, toggleIsBack } from '../../store/taskSlice';
+import { cleanUser } from '../../store/userSlice';
+import { useLogoutMutation } from '../../api/authApi';
 
 import styles from './BackLink.module.scss';
 
 function BackLink({ text = 'Назад', link, type }) {
   const dispatch = useDispatch();
+  const [logout, { isLoading, error }] = useLogoutMutation();
 
   return (
     <>
@@ -42,6 +45,17 @@ function BackLink({ text = 'Назад', link, type }) {
             ? () => {
                 dispatch(toggleIsBack());
                 dispatch(openTaskModal('allComments'));
+              }
+            : type === 'logout'
+            ? () => {
+                try {
+                  logout();
+                  localStorage.clear();
+                  dispatch(cleanUser());
+                } catch (error) {
+                  console.log(error);
+                }
+                console.log('hi');
               }
             : ''
         }

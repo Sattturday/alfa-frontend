@@ -8,14 +8,14 @@ import styles from './IDPCard.module.scss';
 
 const IDPCard = ({ data }) => {
   const navigate = useNavigate();
-  const isIDPdata = data.employee ? true : false;
+  const isIDPdata = data.ipr.length !== 0 ? true : false;
 
-  const isComments = isIDPdata ? hasComments(data.task) : false;
-  const srcIDP = data.employee?.photo;
+  // const isComments = isIDPdata ? hasComments(data.task) : false;
+  const srcIDP = data?.photo;
 
   const handleCardClick = () => {
     if (isIDPdata) {
-      navigate(`/management/${data.employee.id}`);
+      navigate(`/management/${data.id}`);
     }
   };
 
@@ -25,38 +25,40 @@ const IDPCard = ({ data }) => {
 
   return isIDPdata ? (
     <li
-      className={`${styles.card} ${data.status && styles[data.status]} ${
+      className={`${styles.card} ${data.ipr.status && styles[data.status]} ${
         data.is_overdue && styles.expired
       }`}
       onClick={handleCardClick}
     >
       <img className={styles.img} src={srcIDP} alt='Аватар сотрудника' />
       <div className={styles.wrap}>
-        <h2 className={styles.name}>{data.employee.name}</h2>
+        <h2 className={styles.name}>{data.name}</h2>
         <span
-          className={`${styles.message} ${isComments && styles.full}`}
+          className={`${styles.message} ${
+            data.ipr.is_commented && styles.full
+          }`}
         ></span>
       </div>
-      <p className={styles.job}>{data.employee.position}</p>
+      <p className={styles.job}>{data.position}</p>
       <div className={styles.wrap_drop} onClick={handleSelectStatusClick}>
         <Dropmenu />
       </div>
-      <p className={styles.title}>{data.goal}</p>
-      <span className={styles.deadline}>
-        {data.status === 'stoped'
+      <p className={styles.title}>{data.ipr.goal}</p>
+      <span className={styles.ipr.deadline}>
+        {data.ipr.status === 'stoped'
           ? 'Отменён'
-          : data.status === 'checked'
-          ? `Проверен ${formatDate(data.deadline)}`
-          : `До ${formatDate(data.deadline)}`}
+          : data.ipr.status === 'checked'
+          ? `Проверен ${formatDate(data.ipr.deadline)}`
+          : `До ${formatDate(data.ipr.deadline)}`}
       </span>
       <div className={styles.progress}>
         <ProgressBar
           isSmall={true}
-          value={data.progress}
-          isVerified={data.status === 'checked'}
-          isDeadline={data.deadlineFlag}
-          isCancel={data.status === 'stoped'}
-          isNull={data.status === 'created'}
+          value={data.ipr.progress}
+          isVerified={data.ipr.status === 'checked'}
+          isDeadline={data.ipr.is_out_if_date}
+          isCancel={data.ipr.status === 'stoped'}
+          isNull={data.ipr.status === 'created'}
         />
       </div>
     </li>
@@ -81,11 +83,7 @@ const IDPCard = ({ data }) => {
       </div>
       <span className={styles.deadline}>Создать</span>
       <div className={styles.progress}>
-        <ProgressBar
-          isSmall={true}
-          value={data.progress}
-          isNewCard={!isIDPdata}
-        />
+        <ProgressBar isSmall={true} isNewCard={!isIDPdata} />
       </div>
     </li>
   );

@@ -17,8 +17,14 @@ const userSlice = createSlice({
     setIDPdata(state, action) {
       state.IDPdata = action.payload;
     },
+    cleanUser(state) {
+      state.user = {};
+      state.userAvatar = '';
+      state.IDPdata = {};
+    },
   },
 });
 
-export const { setUser, setUserAvatar, setIDPdata } = userSlice.actions;
+export const { setUser, setUserAvatar, setIDPdata, cleanUser } =
+  userSlice.actions;
 export default userSlice.reducer;
