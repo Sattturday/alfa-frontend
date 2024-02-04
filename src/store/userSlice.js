@@ -3,14 +3,16 @@ import { createSlice } from '@reduxjs/toolkit';
 const userSlice = createSlice({
   name: 'user',
   initialState: {
-    employee: {},
+    user: {},
     userAvatar: '',
-    role: '',
     IDPdata: {},
   },
   reducers: {
     setUserAvatar(state, action) {
       state.userAvatar = action.payload;
+    },
+    setUser(state, action) {
+      state.user = action.payload;
     },
     setIDPdata(state, action) {
       state.IDPdata = action.payload;
@@ -18,5 +20,5 @@ const userSlice = createSlice({
   },
 });
 
-export const { setUserAvatar, setIDPdata, changeStatusIpr } = userSlice.actions;
+export const { setUser, setUserAvatar, setIDPdata } = userSlice.actions;
 export default userSlice.reducer;
