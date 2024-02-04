@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const IDPSlice = createSlice({
-  name: "idp",
+  name: 'idp',
   initialState: {
     allIDPdata: [],
     IDPdata: {},
@@ -16,5 +16,5 @@ const IDPSlice = createSlice({
   },
 });
 
-export const { setAllIDPdata } = IDPSlice.actions;
+export const { setAllIDPdata, setIDPdata } = IDPSlice.actions;
 export default IDPSlice.reducer;
