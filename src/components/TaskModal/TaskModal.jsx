@@ -7,9 +7,9 @@ import CreateSample from '../CreateSample/CreateSample';
 import TaskModalNav from '../TaskModalNav/TaskModalNav';
 import AboutTask from '../AboutTask/AboutTask';
 import Comments from '../Comments/Comments';
+import CommentsList from '../CommentsList/CommentsList';
 
 import styles from './TaskModal.module.scss';
-import CommentsList from '../CommentsList/CommentsList';
 
 const TaskModal = () => {
   const dispatch = useDispatch();

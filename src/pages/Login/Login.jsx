@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { InputDesktop } from '@alfalab/core-components/input/desktop';
 import { ButtonDesktop } from '@alfalab/core-components/button/desktop';
 
+import { setUser } from '../../store/userSlice';
 import { useLoginMutation } from '../../api/authApi';
 import { useGetMeQuery } from '../../api/userApi';
 import { useForm } from '../../hooks/useForm';
@@ -11,46 +13,32 @@ import Helper from '../../components/Helper/Helper';
 
 import styles from './Login.module.scss';
 
-const Login = ({
-  onLogin,
-  isLoggedEmployee = false,
-  isLoggedLeader = false,
-}) => {
-  const [login, { isLoading, error }] = useLoginMutation();
-  const { data: userData } = useGetMeQuery();
+const Login = () => {
+  const [isSubmit, setIsSubmit] = useState(false);
+  const [isFormDisabled, setIsFormDisabled] = useState(false);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [login] = useLoginMutation();
+  const { data: userData } = useGetMeQuery(isSubmit);
+  const { values, resetForm, handleChange, errors, setErrors, isValid } =
+    useForm();
 
   useEffect(() => {
     if (userData) {
       console.log(userData);
+      dispatch(setUser(userData));
+      if (userData.is_staff === true) {
+        navigate('/leader', { replace: true });
+      } else {
+        navigate('/employee', { replace: true });
+      }
     }
   }, [userData]);
 
-  const navigate = useNavigate();
-
-  const {
-    values,
-    resetForm,
-    handleChange,
-    errors,
-    setErrors,
-    isValid,
-    setIsValid,
-  } = useForm();
-
-  const [isFormDisabled, setIsFormDisabled] = useState(false);
-
-  useEffect(() => {
-    if (isLoggedEmployee) {
-      navigate('/employee', { replace: true });
-    }
-    if (isLoggedLeader) {
-      navigate('/leader', { replace: true });
-    }
-  });
-
   const handleSubmit = async (evt) => {
     evt.preventDefault();
-    /* onLogin() */
     setIsFormDisabled(true);
 
     try {
@@ -59,7 +47,7 @@ const Login = ({
         password: values.password,
       }).unwrap();
       localStorage.setItem('token', response.auth_token);
-
+      setIsSubmit(true);
       resetForm();
       setIsFormDisabled(false);
     } catch (error) {

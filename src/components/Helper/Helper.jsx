@@ -1,7 +1,7 @@
 import FriendlyPic from '../../assets/img/friendly-pic.png';
 import styles from './Helper.module.scss';
 
-// 2 варианта отображения подскаски - с маркированным списком и с параграфом
+// 2 варианта отображения подсказки - с маркированным списком и с параграфом
 // соответственно type = list и type = paragraph
 // по умолчанию type = paragraph
 function Helper({ title, advices, type = 'paragraph' }) {

@@ -1,9 +1,9 @@
+import { useState } from 'react';
 import { Input } from '@alfalab/core-components/input';
 import { Textarea } from '@alfalab/core-components/textarea';
 import { UniversalDateInput } from '@alfalab/core-components/universal-date-input';
 
 import styles from './TaskForm.module.scss';
-import { useState } from 'react';
 
 const TaskForm = () => {
   const [dataValue, setDataValue] = useState('');

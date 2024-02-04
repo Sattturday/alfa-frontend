@@ -8,15 +8,9 @@ import ShowList from '../../components/ShowList/ShowList';
 import Helper from '../../components/Helper/Helper';
 import TaskListTitle from '../../components/TaskListTitle/TaskListTitle';
 import { IDPcardsData } from '../../utils/data';
-import {
-  changeStatusIpr,
-  setIDPdata,
-  setUserAvatar,
-} from '../../store/userSlice';
+import { setIDPdata, setUserAvatar } from '../../store/userSlice';
 
 import styles from './Employee.module.scss';
-import { useGetUserIDPQuery } from '../../api/userApi';
-import { useGetIDPbyIdQuery } from '../../api/IDPApi';
 
 function Employee() {
   const dispatch = useDispatch();
@@ -26,11 +20,7 @@ function Employee() {
 
   // достаем из стора актуальные данные
   const { IDPdata } = useSelector((state) => state.user);
-  //const id = employee.id;
-  // const { data: userIDPdata, isLoading, error } = useGetIDPbyIdQuery({ id });
 
-  // console.log(userIDPdata);
-  // записываем в стор, но потом вожможно это надо будет делать в другом месте, сразу после авторизации
   useEffect(() => {
     dispatch(setIDPdata(dataIDP));
     dispatch(setUserAvatar(dataIDP.avatar));
@@ -38,7 +28,7 @@ function Employee() {
 
   return (
     <main className={styles.employee}>
-      <BackLink link='/' />
+      <BackLink link='/' type='logout' />
       <Profile />
       {IDPdata.status === '' && (
         <div className={styles.empty}>

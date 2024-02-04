@@ -44,7 +44,7 @@ const Leader = () => {
 
   return (
     <section className={styles.leader}>
-      <BackLink link='/' />
+      <BackLink link='/' type='logout' />
       <h1 className={styles.leader__title}>
         Индивидуальные планы развития для сотрудников
       </h1>

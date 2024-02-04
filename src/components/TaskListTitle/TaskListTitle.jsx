@@ -1,8 +1,9 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { openTaskModal } from '../../store/taskSlice';
+
 import styles from './TaskListTitle.module.scss';
-import { openTaskModal, setTypeTaskModal } from '../../store/taskSlice';
 
 function TaskListTitle() {
   const dispatch = useDispatch();

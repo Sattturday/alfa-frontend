@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { openTaskModal } from '../../store/taskSlice';
+
 import styles from './AddTaskButton.module.scss';
 
 function AddTaskButton({ isActive = false }) {
