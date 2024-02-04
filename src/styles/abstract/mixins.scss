@@ -125,23 +125,3 @@
   white-space: nowrap;
   overflow: hidden;
 }
-
-// это оставлю тут временно, если ховеры будут одинаковыми по проекту,
-// то можно будет эти миксины отредактировать и использовать
-@mixin link-hover {
-  @extend %transition-all;
-
-  &:hover {
-    filter: drop-shadow(2px 3px 6px rgba(0, 0, 0, 0.22));
-    transform: scale(1.01);
-  }
-}
-
-@mixin button-hover {
-  @extend %transition-all;
-
-  &:hover {
-    filter: drop-shadow(2px 3px 6px rgba(0, 0, 0, 0.22));
-    opacity: 0.9;
-  }
-}

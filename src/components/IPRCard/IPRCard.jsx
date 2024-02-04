@@ -6,10 +6,11 @@ import { Input } from '@alfalab/core-components/input';
 import { Textarea } from '@alfalab/core-components/textarea';
 import { UniversalDateInput } from '@alfalab/core-components/universal-date-input';
 
+import { closeConfirmPopup, toggleClickButtonOk } from '../../store/modalSlice';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import ConfirmPopup from '../ConfirmPopup/ConfirmPopup';
 import Helper from '../Helper/Helper';
-import { closeConfirmPopup, toggleClickButtonOk } from '../../store/modalSlice';
+
 import styles from './IPRCard.module.scss';
 
 function IPRCard({ title }) {

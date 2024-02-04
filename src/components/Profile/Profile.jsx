@@ -1,18 +1,19 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React from 'react';
+import { useDispatch } from 'react-redux';
 
-import { Button } from "@alfalab/core-components/button";
-import { CheckmarkMIcon } from "@alfalab/icons-glyph/CheckmarkMIcon";
-import { PauseCompactMIcon } from "@alfalab/icons-glyph/PauseCompactMIcon";
-import { TrashCanLineMIcon } from "@alfalab/icons-glyph/TrashCanLineMIcon";
+import { Button } from '@alfalab/core-components/button';
+import { CheckmarkMIcon } from '@alfalab/icons-glyph/CheckmarkMIcon';
+import { PauseCompactMIcon } from '@alfalab/icons-glyph/PauseCompactMIcon';
+import { TrashCanLineMIcon } from '@alfalab/icons-glyph/TrashCanLineMIcon';
+
 import {
   openConfirmPopup,
   setIsActive,
   setDataInfo,
-} from "../../store/modalSlice";
+} from '../../store/modalSlice';
+import UserInfo from '../UserInfo/UserInfo';
 
-import UserInfo from "../UserInfo/UserInfo";
-import styles from "./Profile.module.scss";
+import styles from './Profile.module.scss';
 
 function Profile({ isOpenAboutPlan }) {
   const dispatch = useDispatch();
@@ -25,16 +26,16 @@ function Profile({ isOpenAboutPlan }) {
           <Button
             className={styles.button}
             leftAddons={<CheckmarkMIcon />}
-            view="accent"
+            view='accent'
             onClick={() => {
               dispatch(
                 setDataInfo({
-                  title: "Вы уверены, что хотите завершить ИПР?",
-                  leftButtonText: "Отменить",
-                  rightButtonText: "Завершить",
+                  title: 'Вы уверены, что хотите завершить ИПР?',
+                  leftButtonText: 'Отменить',
+                  rightButtonText: 'Завершить',
                 })
               );
-              dispatch(setIsActive(""));
+              dispatch(setIsActive(''));
               dispatch(openConfirmPopup());
             }}
           >
@@ -43,24 +44,24 @@ function Profile({ isOpenAboutPlan }) {
           <Button
             className={styles.button}
             leftAddons={<PauseCompactMIcon />}
-            view="primary"
+            view='primary'
           >
             Пауза
           </Button>
           <Button
             className={styles.button}
-            view="primary"
+            view='primary'
             leftAddons={<TrashCanLineMIcon />}
-            name="delete-IPR"
+            name='delete-IPR'
             onClick={() => {
               dispatch(
                 setDataInfo({
-                  title: "Вы уверены, что хотите удалить ИПР?",
-                  leftButtonText: "Отменить",
-                  rightButtonText: "Удалить",
+                  title: 'Вы уверены, что хотите удалить ИПР?',
+                  leftButtonText: 'Отменить',
+                  rightButtonText: 'Удалить',
                 })
               );
-              dispatch(setIsActive(""));
+              dispatch(setIsActive(''));
               dispatch(openConfirmPopup());
             }}
           ></Button>

@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-import { formatDate, hasComments } from '../../utils/utils';
+import { formatDate } from '../../utils/utils';
 import Dropmenu from '../Dropmenu/Dropmenu';
 import ProgressBar from '../ProgressBar/ProgressBar';
 
@@ -10,7 +10,6 @@ const IDPCard = ({ data }) => {
   const navigate = useNavigate();
   const isIDPdata = data.ipr.length !== 0 ? true : false;
 
-  // const isComments = isIDPdata ? hasComments(data.task) : false;
   const srcIDP = data?.photo;
 
   const handleCardClick = () => {
