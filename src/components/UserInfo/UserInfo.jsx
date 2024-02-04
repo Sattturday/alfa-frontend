@@ -1,6 +1,7 @@
 import React from 'react';
-import styles from './UserInfo.module.scss';
 import { useSelector } from 'react-redux';
+
+import styles from './UserInfo.module.scss';
 
 function UserInfo({ type }) {
   // здесь получаем данные из стора, полученные с сервера и записанные в него при входе на страницу ИПР

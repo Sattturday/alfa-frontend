@@ -15,7 +15,7 @@ import styles from './BackLink.module.scss';
 
 function BackLink({ text = 'Назад', link, type }) {
   const dispatch = useDispatch();
-  const [logout, { isLoading, error }] = useLogoutMutation();
+  const [logout] = useLogoutMutation();
 
   return (
     <>

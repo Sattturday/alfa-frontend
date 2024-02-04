@@ -29,8 +29,6 @@ function Management() {
   const { isActive, dataInfo } = useSelector((state) => state.modal);
   // здесь используем данные ИПР из стора, чтобы они всегда были актуальные
   const { IDPdata } = useSelector((state) => state.user);
-  // const { userData } = useSelector((state) => state.user);
-  // const tasks = userData.userIpr.iprTasks;
 
   const handleCompleteIPR = () => {
     console.log('complete');

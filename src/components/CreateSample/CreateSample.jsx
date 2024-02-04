@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { SelectDesktop } from '@alfalab/core-components/select/desktop';
 import { BaseOption } from '@alfalab/core-components/select/shared';
 import { Button } from '@alfalab/core-components/button';

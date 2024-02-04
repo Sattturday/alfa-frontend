@@ -14,18 +14,6 @@ function AboutPlan({ onClickEditBtn }) {
   const { status, title, goal, description, deadline, progress, deadlineFlag } =
     IDPdata;
 
-  // const { iprStatus, userData } = useSelector((state) => state.user);
-  // const {
-  //   iprName,
-  //   iprGoal,
-  //   iprDescription,
-  //   iprDeadline,
-  //   progress,
-  //   deadlineFlag,
-  //   isVerified,
-  //   isNewCard,
-  // } = userData.userIpr;
-
   const { pathname } = useLocation();
   return (
     <section className={styles.root}>

@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { setUser } from '../../store/userSlice';
-
 import { InputDesktop } from '@alfalab/core-components/input/desktop';
 import { ButtonDesktop } from '@alfalab/core-components/button/desktop';
 
+import { setUser } from '../../store/userSlice';
 import { useLoginMutation } from '../../api/authApi';
 import { useGetMeQuery } from '../../api/userApi';
 import { useForm } from '../../hooks/useForm';
@@ -21,17 +20,10 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [login, { isLoading, error }] = useLoginMutation();
+  const [login] = useLoginMutation();
   const { data: userData } = useGetMeQuery(isSubmit);
-  const {
-    values,
-    resetForm,
-    handleChange,
-    errors,
-    setErrors,
-    isValid,
-    setIsValid,
-  } = useForm();
+  const { values, resetForm, handleChange, errors, setErrors, isValid } =
+    useForm();
 
   useEffect(() => {
     if (userData) {
